@@ -1,3 +1,7 @@
+
+
+/*--------------- Setup - Firebase -------------*/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
@@ -12,17 +16,29 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+/*--------------- Read Data - Guesser -------------*/
+
+function readSpinData(value) {
+  const db = getDatabase();
+  set(ref(db, 'spinData/' + 1), {
+    value
+  });
+  }
 
 
+  function validateGuess() {
+    let x = document.forms["guessForm"]["text-input"].value;
+    if (x == readSpinData(i.value)) {
+      alert("Correct");
+      return true;
+    }
+  }
 
-function writeUserData(userId, name, email, imageUrl) {
-const db = getDatabase();
-set(ref(db, 'users/' + userId), {
-username: name,
-email: email,
-profile_picture : imageUrl
-});
-}
+
+ // readSpinData(i.value)
+
+
+/*--------------- Write Data - Player -------------*/
 
 function writeSpinData(value) {
   const db = getDatabase();
@@ -30,8 +46,6 @@ function writeSpinData(value) {
     value
   });
   }
-//writeUserData(1, "malorie", "malorie.delvecchio@gmail.com", "abc")
-
 /* --------------- Spin Wheel  --------------------- */
 const spinWheel = document.getElementById("spinWheel");
 const spinBtn = document.getElementById("spin_btn");
