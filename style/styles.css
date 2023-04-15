@@ -96,12 +96,26 @@ h2 {
   font-style: bold;
   font-size: 40px;
   color:#451F27;
-  margin-top: 40px;
   text-align: center;
+  margin-top: 40px;
+
 }
 
 h3 {
+  font-family: 'Trilby', 'PT Serif', serif;
+  font-style: bold;
+  font-size: 32px;
+  color:#451F27;
+  text-align: center;
   margin-top: 20px;
+}
+
+h4 {
+  font-family: 'Trilby', 'PT Serif', serif;
+  font-style: bold;
+  font-size: 24px;
+  color: #ED7657;
+  text-align: center;
 }
 
 ol {
