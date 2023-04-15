@@ -62,6 +62,11 @@ img {
   margin: 0 auto;
 }
 
+img .logo {
+  max-width: 200%;
+  height: auto;
+}
+
 video {
   display: block;
   margin: 0 auto;
