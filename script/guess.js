@@ -20,11 +20,10 @@ const database = getDatabase(app);
 
 async function readSpinData(){
   const dbRef = ref(getDatabase());
-  let response = "non";
-   await get(child(dbRef, `spinData/1`)).then((snapshot) => {
+  const response = await get(child(dbRef, `spinData/1`)).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
-      response = snapshot.val();
+      return snapshot.val();
     } else {
       console.log("No data available");
     }
@@ -50,13 +49,18 @@ function writeSpinData(value) {
   document.getElementById("guessForm").addEventListener("submit", function(e){
     e.preventDefault();
     let x = document.forms["guessForm"]["text-input"].value;
-    if (x == readSpinData()) {
-      alert("Correct");
-      return true;
-    }
-    else {
+    readSpinData().then(function (response){
       console.log(x);
-      console.log(readSpinData())
-      alert("NotCorrect");
-    }
-  })
+      console.log(response);
+      if (x == response.value) {
+        alert("Correct");
+        return true;
+      }
+      else {
+  
+        alert("NotCorrect");
+      }
+
+    })
+    });
+   
