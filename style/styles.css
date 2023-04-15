@@ -6,13 +6,17 @@
 
 /*-----------------  VARIABLES  -----------------*/
 
+/*------
 :root {
-  /* Colors */ 
+  // Colors 
   --white_color : rgb(255, 255, 255);
   --gold_color: #451F27;
-  /* --green_color: rgb(45, 252, 26); */
+  // --green_color: rgb(45, 252, 26);
   --body_background: linear-gradient(to right, #F7E0B2 0%, #F7E0B2 10%, #FBF9ED 10%, #FBF9ED 20%, #F7E0B2 20%, #F7E0B2 30%, #FBF9ED 30%, #FBF9ED 40%, #F7E0B2 40%, #F7E0B2 50%, #FBF9ED 50%, #FBF9ED 60%,#F7E0B2 60%, #F7E0B2 70%, #FBF9ED 70%, #FBF9ED 80%,#F7E0B2 80%, #F7E0B2 90%, #FBF9ED 90%, #FBF9ED 100%);
-}
+} 
+-------*/
+
+
 
 nav {
   padding: 10px;
@@ -55,7 +59,51 @@ a:hover {
 }
 body {
   height: 100vh;
-  background: var(--body_background);
+  background: #FBF9ED;
+}
+
+#yellow {
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    #F7E0B2 0%,
+    #F7E0B2 15%,
+    #F9EACA 15%,
+    #F9EACA 30%
+  );
+}
+
+#red {
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    #EF967E 0%,
+    #EF967E 15%,
+    #F3B493 15%,
+    #F3B493 30%
+  );
+}
+
+#blue {
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    #86D4D3 0%,
+    #86D4D3 15%,
+    #B4D9C6 15%,
+    #B4D9C6 30%
+  );
+}
+
+#mix {
+  height: 100vh;
+  background: repeating-linear-gradient(
+    to right,
+    #86D4D3 0%,
+    #86D4D3 15%,
+    #F7E0B2 15%,
+    #F7E0B2 30%
+  );
 }
 
 /*-----------------  Styling Start  -----------------*/
