@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waiting Room</title>
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+  <style>
+    .timer {
+      background-color: #451F27;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      border: 10px solid #61C9C8;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="button">Home</a></li>
+      <li><a href="player.html" class="button">Player</a></li>
+      <li><a href="guessers.html" class="button">Guessers</a></li>
+      <li><a href="settings.html" class="button">Settings</a></li>
+
+    </ul>
+  </nav>
+  <header>
+    <h1 style="text-align: center; font-weight: bold;">Please wait...</h1>
+    <h2 style="text-align: center; color: #8B5E3C;">Another game is in progress</h2>
+  </header>
+
+<div class="timer" id="timer" style="margin-bottom: 16px;">3:00</div>
+
+<button id="questionMark">?</button>
+<img src="assets/Bottom deco.png" alt="Buttom Deco" style="margin-top: 16px;">
+
+<script>
+  const timer = document.getElementById("timer");
+  const questionMark = document.getElementById("questionMark");
+  let time = 180;
+
+  function updateTimer() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    timer.innerHTML = `${minutes}:${seconds}`;
+
+    if (time === 0) {
+      clearInterval(countdownInterval);
+    }
+
+    time--;
+  }
+
+  questionMark.addEventListener("click", function() {
+    alert("Please wait until the players to finish the game");
+  });
+
+  let countdownInterval = setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
