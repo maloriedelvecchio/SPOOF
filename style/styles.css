@@ -62,9 +62,11 @@ img {
   margin: 0 auto;
 }
 
-img .logo {
-  max-width: 200%;
+#logo {
+  max-width: 100%;
   height: auto;
+  padding-top: 15%;
+  transform: rotate(-10deg);
 }
 
 video {
