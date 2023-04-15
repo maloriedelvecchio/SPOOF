@@ -92,7 +92,12 @@ h1 {
 }
 
 h2 {
+  font-family: 'Trilby', 'PT Serif', serif;
+  font-style: bold;
+  font-size: 40px;
+  color:#451F27;
   margin-top: 40px;
+  text-align: center;
 }
 
 h3 {
