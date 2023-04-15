@@ -98,9 +98,7 @@ h2 {
   font-size: 40px;
   color:#451F27;
   text-align: center;
-  margin-top: 40px;
-  padding-top: 15%;
-
+  padding-top:15%;
 }
 
 h3 {
@@ -118,6 +116,20 @@ h4 {
   font-size: 24px;
   color: #ED7657;
   text-align: center;
+}
+
+#actor {
+  font-size: 64px;
+  color:#ED7657;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-fill-color: #FBF9ED;
+}
+
+#guesser {
+  font-size: 64px;
+  color: #61C9C8;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-fill-color: #FBF9ED;
 }
 
 p {
