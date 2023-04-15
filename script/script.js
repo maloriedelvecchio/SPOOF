@@ -1,7 +1,4 @@
-
-
 /*--------------- Setup - Firebase -------------*/
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
@@ -17,14 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 /*--------------- Read Data - Guesser -------------*/
-
 function readSpinData(value) {
   const db = getDatabase();
   set(ref(db, 'spinData/' + 1), {
     value
   });
   }
-
 
   function validateGuess() {
     let x = document.forms["guessForm"]["text-input"].value;
@@ -33,13 +28,7 @@ function readSpinData(value) {
       return true;
     }
   }
-
-
- // readSpinData(i.value)
-
-
 /*--------------- Write Data - Player -------------*/
-
 function writeSpinData(value) {
   const db = getDatabase();
   set(ref(db, 'spinData/' + 1), {
@@ -68,6 +57,7 @@ const spinValues = [
 /* --------------- Size Of Each Piece  --------------------- */
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
 /* --------------- Background Colors  --------------------- */
+
 var spinColors = [
   "#ED7657",
   "#61C9C8",
@@ -82,6 +72,7 @@ var spinColors = [
   "#61C9C8",
   "#F7E0B2",
 ];
+
 /* --------------- Chart --------------------- */
 /* --------------- Guide : https://chartjs-plugin-datalabels.netlify.app/guide/getting-started.html --------------------- */
 let spinChart = new Chart(spinWheel, {
