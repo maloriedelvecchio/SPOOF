@@ -2,21 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 /* ----------------------------start page--------------------------------------------- */
-/* 
- */
-
 /* ------------------------------Player----------------------------------------------- */
 
 /*-----------------  VARIABLES  -----------------*/
+
 :root {
   /* Colors */ 
   --white_color : rgb(255, 255, 255);
   --gold_color: #451F27;
   /* --green_color: rgb(45, 252, 26); */
   --body_background: linear-gradient(to right, #F7E0B2 0%, #F7E0B2 10%, #FBF9ED 10%, #FBF9ED 20%, #F7E0B2 20%, #F7E0B2 30%, #FBF9ED 30%, #FBF9ED 40%, #F7E0B2 40%, #F7E0B2 50%, #FBF9ED 50%, #FBF9ED 60%,#F7E0B2 60%, #F7E0B2 70%, #FBF9ED 70%, #FBF9ED 80%,#F7E0B2 80%, #F7E0B2 90%, #FBF9ED 90%, #FBF9ED 100%);
-
-
 }
+
 nav {
   padding: 10px;
 }
@@ -46,6 +43,7 @@ a:hover {
 }
 
 /*-----------------  Base  -----------------*/
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -56,8 +54,9 @@ body {
   height: 100vh;
   background: var(--body_background);
 }
+
 /*-----------------  Styling Start  -----------------*/
-/* Add your styles here */
+
 img {
   display: block;
   margin: 0 auto;
