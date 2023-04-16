@@ -67,7 +67,6 @@ body {
 a {
   font-family: 'Trilby', 'zilla slab', serif;
   font-weight: 600;
-  font-size: 1.2rem;
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
@@ -106,7 +105,7 @@ button:hover {
 form {
   font-family: 'futura-pt', 'jost', sans-serif;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 400;
   color:#451F27;
   display: flex;
@@ -145,42 +144,42 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 3.5em;
   color: #FBF9ED;
   padding-top: 15%;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3em;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.5em;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   color: #ED7657;
 }
 
 #actor {
   color:#ED7657;
-  font-size: 4rem;
+  font-size: 4.5em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
   color: #61C9C8;
-  font-size: 4rem;
+  font-size: 4.5em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #prompt {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 1.5em;
   color: var(--gold_color);
   font-weight: 500;
 }
