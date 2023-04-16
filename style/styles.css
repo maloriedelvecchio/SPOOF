@@ -219,7 +219,6 @@ video {
 #logo {
   max-width: 100%;
   padding: 10%;
-  height: auto;
   transform: rotate(-10deg);
 }
 
