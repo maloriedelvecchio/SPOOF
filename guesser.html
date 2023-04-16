@@ -10,16 +10,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Guessers</title>
 </head>
-<header>
-    <h2>What is being acted out?</h2>
-</header>
 <body>
-    <div class="guess_input">
-        <label for="text-input" style ="margin-bottom: 20px; font-size: 20px;">What is your guess?</label>
-        <form id="guessForm" name="guessForm">
-            <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
-            <input type="submit" value="Submit" style="width: 80%; padding: 8px; font-size: 20px; margin-top: 20px;">
-        </form>
+    <div class="container">
+        <div class="row">
+            <header>
+                <h2>What is being acted out?</h2>
+            </header>
+        </div>
+        <div class="row">
+            <form id="guessForm" name="guessForm">
+                    <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
+                    <input type="submit" id="text-submit" value="send">
+            </form>
+        </div>
     </div>
 <script src="script/guess.js" type="module"></script>
 

@@ -19,15 +19,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script> 
 </head>
 <body>
-  <h2>Spin the wheel to get your prompt</h2>
+  
   <div class="container">
-     <div class="wheel_box">
-      <canvas id="spinWheel"></canvas>
-      <button id="spin_btn">SPIN</button>
-      <i class="fa-solid fa-location-arrow"></i>
-     </div> 
-    <div id="text"><p>Lets Play!</p></div>
+  <div class="row">
+    <h2>Spin the wheel to get your prompt</h2>
   </div>
+    <div id="wheel_container">
+      <div class="wheel_box">
+       <canvas id="spinWheel"></canvas>
+       <button id="spin_btn">SPIN</button>
+       <i class="fa-solid fa-location-arrow"></i>
+      </div> 
+    <div id="text"><p>Lets Play!</p></div>
+   </div>
+
+  
   <!---------------  SCRIPT  --------------------->
   
   <script src="script/script.js" type="module"></script>
