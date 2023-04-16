@@ -65,9 +65,9 @@ body {
 /*--------------  BUTTONS  --------------*/
 
 a {
-  font-family: 'Trilby', 'PT Serif', serif;
+  font-family: 'Trilby', 'zilla slab', serif;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
@@ -106,7 +106,7 @@ button:hover {
 form {
   font-family: 'futura-pt', 'jost', sans-serif;
   font-style: normal;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 400;
   color:#451F27;
   display: flex;
@@ -145,39 +145,34 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 900;
-  font-size: 3em;
+  font-size: 3rem;
   color: #FBF9ED;
   padding-top: 15%;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 h4 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #ED7657;
 }
-/*
-p, ol {
-  font-size: 1.2em;
-  font-weight: 400;
-}*/
 
 #actor {
   color:#ED7657;
-  font-size: 4em;
+  font-size: 4rem;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
   color: #61C9C8;
-  font-size: 4em;
+  font-size: 4rem;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
