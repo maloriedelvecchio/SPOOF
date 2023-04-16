@@ -106,7 +106,7 @@ button:hover {
 form {
   font-family: 'futura-pt', 'jost', sans-serif;
   font-style: normal;
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: 400;
   color:#451F27;
   display: flex;
@@ -170,14 +170,12 @@ p, ol {
 }
 
 #actor {
-  font-size: 8em;
   color:#ED7657;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
-  font-size: 8em;
   color: #61C9C8;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
