@@ -111,7 +111,7 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 3rem;
+  padding-top: 3em;
 }
 
 input {
@@ -144,17 +144,17 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 900;
-  font-size: 3.5em;
+  font-size: 3em;
   color: #FBF9ED;
   padding-top: 15%;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 h4 {
@@ -164,20 +164,20 @@ h4 {
 
 #actor {
   color:#ED7657;
-  font-size: 4.5em;
+  font-size: 3em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
   color: #61C9C8;
-  font-size: 4.5em;
+  font-size: 3em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #prompt {
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
   margin-top: 1.5em;
   color: var(--gold_color);
@@ -217,3 +217,7 @@ main {
   padding: 20px;
 }
 
+
+.container {
+  max-width: 90%;
+}
