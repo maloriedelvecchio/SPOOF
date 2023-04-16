@@ -61,8 +61,8 @@ body {
 
 a {
   font-family: 'Trilby', 'PT Serif', serif;
-  font-style: bold;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 2.5em;
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
@@ -98,7 +98,11 @@ button:hover {
 /*--------------  FORM  --------------*/
 
 form {
-  font-family: futura pt; 
+  font-family: 'futura-pt', 'jost', sans-serif;
+  font-style: normal;
+  font-size: 2em;
+  font-weight: 400;
+  color:#451F27;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
