@@ -156,7 +156,7 @@ h4 {
   color: #ED7657;
 }
 
-p {
+p, ol {
   font-family: 'futura-pt', 'jost', sans-serif;
   font-style: normal;
   font-weight: 400;
