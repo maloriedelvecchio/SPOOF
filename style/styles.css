@@ -13,6 +13,11 @@
 body {
   height: 100vh;
   background: #FBF9ED;
+  font-family: 'futura-pt', 'jost', sans-serif;
+  font-style: normal;
+  font-size: 2em;
+  font-weight: 400;
+  color:#451F27;
 }
 
 /*--------------  BACKGROUNDS  --------------*/
@@ -161,20 +166,20 @@ h4 {
   font-size: 2.5em;
   color: #ED7657;
 }
-
+/*
 p, ol {
   font-family: 'futura-pt', 'jost', sans-serif;
   font-style: normal;
   font-size: 2em;
   font-weight: 400;
   color:#451F27;
-}
+}*/
 
 #actor {
   font-size: 8em;
   color:#ED7657;
   -webkit-text-stroke-width: 5px;
-  -webkit-text-fill-color: #080807;
+  -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
@@ -185,7 +190,7 @@ p, ol {
 }
 
 #spin-title {
-  font-size: 0em;
+  font-size: 14px;
 }
 
 #prompt {
