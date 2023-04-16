@@ -184,6 +184,10 @@ p, ol {
   -webkit-text-fill-color: #FBF9ED;
 }
 
+#spin-title {
+  font-size: 0em;
+}
+
 #prompt {
   font-size: 1.5rem;
   text-align: center;
