@@ -66,6 +66,7 @@ a {
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
+  text-transform: uppercase;
 }
 
 button {
@@ -169,16 +170,16 @@ p, ol {
 }
 
 #actor {
-  font-size: 64px;
+  font-size: 8em;
   color:#ED7657;
-  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-width: 5em;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
-  font-size: 64px;
+  font-size: 8em;
   color: #61C9C8;
-  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-width: 5em;
   -webkit-text-fill-color: #FBF9ED;
 }
 
