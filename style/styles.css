@@ -1,69 +1,28 @@
 /*-----------------  GOOGLE FONTS  -----------------*/
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
-/* ----------------------------start page--------------------------------------------- */
-/* ------------------------------Player----------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Zilla+Slab:wght@500;600;700&display=swap');
 
-/*-----------------  VARIABLES  -----------------*/
-
-/*------
-:root {
-  // Colors 
-  --white_color : rgb(255, 255, 255);
-  --gold_color: #451F27;
-  // --green_color: rgb(45, 252, 26);
-  --body_background: linear-gradient(to right, #F7E0B2 0%, #F7E0B2 10%, #FBF9ED 10%, #FBF9ED 20%, #F7E0B2 20%, #F7E0B2 30%, #FBF9ED 30%, #FBF9ED 40%, #F7E0B2 40%, #F7E0B2 50%, #FBF9ED 50%, #FBF9ED 60%,#F7E0B2 60%, #F7E0B2 70%, #FBF9ED 70%, #FBF9ED 80%,#F7E0B2 80%, #F7E0B2 90%, #FBF9ED 90%, #FBF9ED 100%);
-} 
--------*/
-
-
-
-nav {
-  padding: 10px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-}
-
-a.active {
-  background-color: #ED7657;
-}
-
-a:hover {
-  background-color: #ED7657;
-}
-
-/*-----------------  Base  -----------------*/
+/*-----------------  BASE  -----------------*/
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'futura-pt', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-
 }
+
 body {
   height: 100vh;
   background: #FBF9ED;
+  font-family: 'futura-pt', 'jost', sans-serif;
+  font-style: normal;
+  font-size: 2em;
+  font-weight: 400;
+  color:#451F27;
 }
 
+/*--------------  BACKGROUNDS  --------------*/
+
 #yellow {
-  height: 100vh;
   background: repeating-linear-gradient(
     to right,
     #F7E0B2 0%,
@@ -74,7 +33,6 @@ body {
 }
 
 #red {
-  height: 100vh;
   background: repeating-linear-gradient(
     to right,
     #EF967E 0%,
@@ -85,7 +43,6 @@ body {
 }
 
 #blue {
-  height: 100vh;
   background: repeating-linear-gradient(
     to right,
     #86D4D3 0%,
@@ -96,7 +53,6 @@ body {
 }
 
 #mix {
-  height: 100vh;
   background: repeating-linear-gradient(
     to right,
     #86D4D3 0%,
@@ -106,96 +62,15 @@ body {
   );
 }
 
-/*-----------------  Styling Start  -----------------*/
-
-img {
-  display: block;
-  margin: 0 auto;
-}
-
-#logo {
-  max-width: 100%;
-  height: auto;
-  padding-top: 15%;
-  transform: rotate(-10deg);
-}
-
-video {
-  display: block;
-  margin: 0 auto;
-}
-
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  font-family: 'Trilby', 'PT Serif', serif;
-  font-weight: 900;
-  font-size: 48px; 
-  color: #FBF9ED;
-  text-align: center;
-  padding-top: 15%;
-}
-
-h2 {
-  font-family: 'Trilby', 'PT Serif', serif;
-  font-style: bold;
-  font-size: 40px;
-  color:#451F27;
-  text-align: center;
-}
-
-h3 {
-  font-family: 'Trilby', 'PT Serif', serif;
-  font-style: bold;
-  font-size: 32px;
-  color:#451F27;
-  text-align: center;
-}
-
-h4 {
-  font-family: 'Trilby', 'PT Serif', serif;
-  font-style: bold;
-  font-size: 24px;
-  color: #ED7657;
-  text-align: center;
-}
-
-#actor {
-  font-size: 64px;
-  color:#ED7657;
-  -webkit-text-stroke-width: 5px;
-  -webkit-text-fill-color: #FBF9ED;
-}
-
-#guesser {
-  font-size: 64px;
-  color: #61C9C8;
-  -webkit-text-stroke-width: 5px;
-  -webkit-text-fill-color: #FBF9ED;
-}
-
-p {
-  font-family: 'futura-pt', sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  font-weight: 400;
-  color:#451F27;
-}
-
-ol {
-  margin-left: 20px;
-}
-
+/*--------------  BUTTONS  --------------*/
 
 a {
   font-family: 'Trilby', 'PT Serif', serif;
   font-style: bold;
   font-size: 24px;
   color: #FBF9ED;
+  text-decoration: none;
+  padding: 10px;
 }
 
 button {
@@ -225,13 +100,7 @@ button:hover {
   background-color: #ED7657;
 }
 
-#prompt {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 1.5rem;
-  color: var(--gold_color);
-  font-weight: 500;
-}
+/*--------------  FORM  --------------*/
 
 form {
   font-family: futura pt; 
@@ -260,3 +129,90 @@ input {
   border: none;
   border-radius: 15px;
 }
+
+/*-------------- TEXT --------------*/
+
+h1, h2, h3, h4 {
+  font-family: 'Trilby', 'Zilla Slab', serif;
+  text-align: center;
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 48px; 
+  color: #FBF9ED;
+  padding-top: 15%;
+}
+
+h2 {
+  font-size: 40px;
+  color:#451F27;
+}
+
+h3 {
+  font-size: 32px;
+  color:#451F27;
+
+}
+
+h4 {
+  font-size: 24px;
+  color: #ED7657;
+}
+
+#actor {
+  font-size: 64px;
+  color:#ED7657;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-fill-color: #FBF9ED;
+}
+
+#guesser {
+  font-size: 64px;
+  color: #61C9C8;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-fill-color: #FBF9ED;
+}
+
+#prompt {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--gold_color);
+  font-weight: 500;
+}
+
+/*-------------- OTHER --------------*/
+
+ol {
+  margin-left: 20px;
+}
+
+li {
+  display: inline-block;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+#logo {
+  max-width: 100%;
+  height: auto;
+  padding-top: 15%;
+  transform: rotate(-10deg);
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
