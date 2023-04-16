@@ -13,6 +13,7 @@
 body {
   height: 100vh;
   background: #FBF9ED;
+  font-size:0em;
 }
 
 /*--------------  BACKGROUNDS  --------------*/
@@ -172,14 +173,14 @@ p, ol {
 #actor {
   font-size: 8em;
   color:#ED7657;
-  -webkit-text-stroke-width: 5em;
-  -webkit-text-fill-color: #FBF9ED;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-fill-color: #080807;
 }
 
 #guesser {
   font-size: 8em;
   color: #61C9C8;
-  -webkit-text-stroke-width: 5em;
+  -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
