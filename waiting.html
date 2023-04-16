@@ -22,43 +22,51 @@
 </head>
 <body id="red">
   
-  <header>
-    <h1>Please wait...</h1>
-    <h3>Another game is in progress</h3>
-  </header>
+  <div class="container">
+    <header>
+      <div class="row">
+        <h1>Please wait...</h1>
+      </div>
+      <div class="row">
+        <h3>Another game is in progress</h3>
+      </div>
+    </header>
+    <main>
+      <div class="timer" id="timer" style="margin-bottom: 16px;">3:00</div>
+      <button id="questionMark">?</button>
+    </main>
+    <footer>
+      <img src="assets/Bottom deco.png" alt="Buttom Deco" style="margin-top: 16px;">
+    </footer>
+  </div>
+  
+  <script>
+    const timer = document.getElementById("timer");
+    const questionMark = document.getElementById("questionMark");
+    let time = 180;
 
-<div class="timer" id="timer" style="margin-bottom: 16px;">3:00</div>
+    function updateTimer() {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
 
-<button id="questionMark">?</button>
-<img src="assets/Bottom deco.png" alt="Buttom Deco" style="margin-top: 16px;">
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
 
-<script>
-  const timer = document.getElementById("timer");
-  const questionMark = document.getElementById("questionMark");
-  let time = 180;
+      timer.innerHTML = `${minutes}:${seconds}`;
 
-  function updateTimer() {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+      if (time === 0) {
+        clearInterval(countdownInterval);
+      }
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    timer.innerHTML = `${minutes}:${seconds}`;
-
-    if (time === 0) {
-      clearInterval(countdownInterval);
+      time--;
     }
 
-    time--;
-  }
+    questionMark.addEventListener("click", function() {
+      alert("Please wait until the players to finish the game");
+    });
 
-  questionMark.addEventListener("click", function() {
-    alert("Please wait until the players to finish the game");
-  });
-
-  let countdownInterval = setInterval(updateTimer, 1000);
-</script>
+    let countdownInterval = setInterval(updateTimer, 1000);
+  </script>
 
 </body>
 </html>
