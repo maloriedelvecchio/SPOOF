@@ -13,11 +13,6 @@
 body {
   height: 100vh;
   background: #FBF9ED;
-  font-family: 'futura-pt', 'jost', sans-serif;
-  font-size: 2em;
-  font-style: normal;
-  font-weight: 400;
-  color:#451F27;
 }
 
 /*--------------  BACKGROUNDS  --------------*/
@@ -159,6 +154,13 @@ h3 {
 h4 {
   font-size: 2.5em;
   color: #ED7657;
+}
+
+p {
+  font-family: 'futura-pt', 'jost', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color:#451F27;
 }
 
 #actor {
