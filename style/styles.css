@@ -67,7 +67,7 @@ body {
 a {
   font-family: 'Trilby', 'PT Serif', serif;
   font-weight: 600;
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
@@ -170,12 +170,14 @@ p, ol {
 
 #actor {
   color:#ED7657;
+  font-size: 4em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
   color: #61C9C8;
+  font-size: 4em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
