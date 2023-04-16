@@ -145,29 +145,28 @@ h1, h2, h3, h4 {
 
 h1 {
   font-weight: 900;
-  font-size: 7em;
+  font-size: 3em;
   color: #FBF9ED;
   padding-top: 15%;
 }
 
 h2 {
-  font-size: 4.5em;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-size: 3.5em;
-
+  font-size: 2em;
 }
 
 h4 {
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: #ED7657;
 }
-
+/*
 p, ol {
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: 400;
-}
+}*/
 
 #actor {
   color:#ED7657;
@@ -179,10 +178,6 @@ p, ol {
   color: #61C9C8;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
-}
-
-#spin-title {
-  font-size: 14px;
 }
 
 #prompt {
