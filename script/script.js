@@ -108,7 +108,7 @@ let spinChart = new Chart(spinWheel, {
 const generateValue = (angleValue) => {
   for (let i of spinValues) {
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      text.innerHTML = `<p>Act as if "${i.value}" </p>`;
+      prompt.innerHTML = `<p>Act as if "${i.value}" </p>`;
       writeSpinData(i.value)
       spinBtn.disabled = false;
       break;
@@ -120,7 +120,7 @@ let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
   spinBtn.disabled = true;
-  text.innerHTML = `<p>Get ready to Spoof!</p>`;
+  prompt.innerHTML = `<p>Get ready to Spoof!</p>`;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
   let rotationInterval = window.setInterval(() => {
     spinChart.options.rotation = spinChart.options.rotation + resultValue;

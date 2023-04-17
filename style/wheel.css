@@ -5,10 +5,11 @@ video {
   margin: 0 auto;
 }
 
-.container {
+.container-wheel {
   width: 90%;
   max-width: 34.37rem;
   margin-top: 3rem;
+  margin-right: 0;
   max-height: 90vh;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -28,6 +29,7 @@ video {
   max-height: inherit;
   width: inherit;
   transform: rotate(270deg);
+  margin: 0;
 }
 
 #spin_btn {

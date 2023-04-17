@@ -73,17 +73,20 @@ a {
 
 }
 
-button {
-  display: block;
-  margin: 0 auto;
-  background-color: #451F27;
-  border: none;
-  border-radius: 15px;
-  padding: 2%;
+#btn_brown, #btn_red, #btn_blue, #btn_role {
   min-width: 250px;
   min-height: 50px;
+  display: block;
+  margin: 0 auto;
+  padding: 2%;
   cursor: pointer;
   text-transform: uppercase;
+  border: none;
+  border-radius: 15px;
+}
+
+#btn_brown {
+  background-color: #451F27;
 }
 
 #btn_red {
@@ -95,13 +98,13 @@ button {
 }
 
 #btn_role {
+  background-color: #451F27;
   border: 12px solid #ED7657;
   border-radius: 15px;
   margin: 2% auto;
   min-height: 100px;
   font-size: 2em;
-  text-transform: capitalize;
-  
+  text-transform: capitalize; 
 }
 
 button:hover {
@@ -178,14 +181,14 @@ h4 {
 
 #actor {
   color:#ED7657;
-  font-size: 3em;
+  font-size: 3.5em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
 
 #guesser {
   color: #61C9C8;
-  font-size: 3em;
+  font-size: 3.5em;
   -webkit-text-stroke-width: 5px;
   -webkit-text-fill-color: #FBF9ED;
 }
