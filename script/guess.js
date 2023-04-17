@@ -58,7 +58,7 @@ function writeSpinData(value) {
       }
       else {
   
-        alert("NotCorrect");
+        alert("Not Correct");
       }
 
     })
