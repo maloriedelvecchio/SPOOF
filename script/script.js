@@ -140,6 +140,23 @@ spinBtn.addEventListener("click", () => {
 /* --------------- End Spin Wheel  --------------------- */
 
 
+/* ---------------   Buttons  --------------------- */
+
+/*
+const navExit = document.getElementsByClassName("nav-exit");
 
 
 
+navExit.addEventListener("click", function() {
+
+})
+
+document.getElementsById("btn_nav_blue").addEventListener ("click", () => {
+  history.back();
+})
+*/
+
+const navBack = document.getElementsByClassName("nav-back");
+navBack.addEventListener("click", () => {
+  history.back();
+});
