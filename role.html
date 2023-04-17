@@ -24,19 +24,25 @@
         <h3>Who are you?</h3>
       </div>
       <div class="row">
-        <button id="btn_role">
+        <button class="main" id="btn_role">
           <a href="actor_instruction.html">Actor</a>
         </button>
       </div>
       <div class="row">
-        <button id="btn_role">
+        <button class="main" id="btn_role">
           <a href="guesser_instruction.html">Guesser</a>
         </button>
       </div>
     </main>
     <footer>
-    
+      <button class="help" id="help_wht_r" alt="Help">?</button>
     </footer>
+    <script>
+      const questionMark = document.getElementById("help_wht_r");
+      questionMark.addEventListener("click", function() {
+        alert("A minimum of 2 people are needed to play the game. There can be only one actor in each round, but there is no limit to the amount of guessers.");
+      });
+    </script>
   </div>
 </body>
 </html>

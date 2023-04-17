@@ -70,10 +70,10 @@ a {
   color: #FBF9ED;
   text-decoration: none;
   padding: 10px;
-
+  font-size: 1.5em;
 }
 
-#btn_brown, #btn_red, #btn_blue, #btn_role {
+button.main {
   min-width: 250px;
   min-height: 80px;
   display: block;
@@ -110,6 +110,33 @@ a {
 button:hover {
   background-color: #ED7657;
 }
+
+button.help {
+  font-family: 'Trilby', 'zilla slab', serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  background-color: #FBF9ED;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+
+#help_wht_r {
+  color: #ED7657;
+}
+
+#help_wht_b {
+  color: #61C9C8;
+}
+
+#help_red {
+  background-color: #ED7657;
+  color: #FBF9ED;
+}
+
 
 /*--------------  FORM  --------------*/
 
