@@ -10,7 +10,6 @@
     <title>Source Code Of Spin Wheel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/wheel.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!---------------  Font Aewsome  --------------------->
@@ -27,18 +26,20 @@
     <header>
       <h2>Spin the wheel to get your prompt</h2>
     </header>
-     
-    <div class="container-wheel">
-      <div class="wheel_box">
-        <canvas id="spinWheel"></canvas>
-        <button id="spin_btn">SPIN</button>
-        <i class="fa-solid fa-location-arrow"></i>
-      </div>
-    </div>
-    
+
     <div class="row">
+      <div class="container-wheel">
+        <div class="wheel_box">
+          <canvas id="spinWheel"></canvas>
+          <button id="spin_btn">SPIN</button>
+          <i class="fa-solid fa-location-arrow"></i>
+        </div>
+      </div>
+    </div>    
+    
+    <footer>
       <div id="prompt"><p>Lets Play!</p></div>
-    </div>  
+    </footer>
   </div>
   
 
