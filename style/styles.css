@@ -203,18 +203,26 @@ h1 {
 
 h2 {
   font-size: 2.5em;
-  padding: 2rem;
+  padding: 2em;
 }
 
 h3 {
   font-size: 2em;
-  padding: 2rem;
+  padding: 2em;
 }
 
 h4 {
   font-size: 1.5em;
   color: #ED7657;
-  padding: 1rem 2rem;
+  padding: 1em 2em;
+}
+
+h5 {
+  font-size: 2em;
+  padding: 2em;
+  padding-bottom: 0;
+  color: #451F27;
+  font-family: 'futura-pt', 'jost', sans-serif;
 }
 
 #actor {
@@ -237,6 +245,14 @@ h4 {
   margin-top: 1.5em;
   color: var(--gold_color);
   font-weight: 500;
+}
+
+p.prompt {
+  font-size: 4.5em;
+  font-weight: 700;
+  padding: 1rem;
+  color:#ED7657;
+  font-family: 'Trilby', 'Zilla Slab', serif;
 }
 
 /*-------------- OTHER --------------*/
@@ -295,6 +311,15 @@ footer {
 
 .popover {
   background-color: #FBF9ED;
+}
+
+.modal {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FBF9ED;
+  border: 1.5em solid #451F27;
+  margin: 0 auto;
 }
 
 /*-----------------  WHEEL STYLE  -----------------*/
