@@ -15,6 +15,12 @@
 </head>
 <body>
     <div class="container">
+        <nav>
+            <button class="nav-exit" id="btn_nav_blue" alt="Exit">
+              <img src="/assets/icon_exit.png">
+            </button>
+          </nav>
+
         <header>
             <h2>What is being acted out?</h2>
         </header>
@@ -27,13 +33,15 @@
             </div>
 
         <footer>
-            <button class="help" id="help_red" alt="Help">?</button>
+            <button class="help" id="btn_help_red" alt="Help">
+                <img src="/assets/icon_help_white.png">
+            </button>
         </footer>
     </div>
 
 <script src="script/guess.js" type="module"></script>
 <script>
-    const questionMark = document.getElementById("help_red");
+    const questionMark = document.getElementById("btn_help_red");
     questionMark.addEventListener("click", function() {
         alert("Guesses can be a word or a phrase. Incorrect guesses will appear above the text field.");
     });

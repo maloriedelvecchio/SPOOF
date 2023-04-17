@@ -107,35 +107,53 @@ button.main {
   text-transform: capitalize; 
 }
 
-button:hover {
-  background-color: #ED7657;
-}
-
 button.help {
-  font-family: 'Trilby', 'zilla slab', serif;
-  font-weight: 600;
-  font-size: 1.5em;
   background-color: #FBF9ED;
-  width: 2.5em;
-  height: 2.5em;
+  width: 3.75em;
+  height: 3.75em;
   border-radius: 50%;
   border: none;
   margin: 0 auto;
   display: block;
 }
 
-#help_wht_r {
+#btn_help_wht_r {
   color: #ED7657;
 }
 
-#help_wht_b {
+#btn_help_wht_b {
   color: #61C9C8;
 }
 
-#help_red {
+#btn_help_red {
   background-color: #ED7657;
   color: #FBF9ED;
 }
+
+button.nav-back {
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 50%;
+  color: #FBF9ED;
+  border: none;
+}
+
+button.nav-exit {
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 50%;
+  color: #FBF9ED;
+  border: none;
+}
+
+#btn_nav_red {
+  background-color: #ED7657;
+}
+
+#btn_nav_blue {
+  background-color: #61C9C8;
+}
+  
 
 
 /*--------------  FORM  --------------*/

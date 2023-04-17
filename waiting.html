@@ -37,7 +37,7 @@
     </header>
     <main>
       <div class="timer" id="timer" style="margin-bottom: 16px;">3:00</div>
-      <button class="help" id="help_wht_b" alt="Help">?</button>
+      <button class="help" id="btn_help_wht_b" alt="Help">?</button>
     </main>
     <footer>
       <img src="assets/Bottom deco.png" alt="Buttom Deco" style="margin-top: 16px;">
@@ -66,7 +66,7 @@
 
     let countdownInterval = setInterval(updateTimer, 1000);
 
-    const questionMark = document.getElementById("help_wht_b");
+    const questionMark = document.getElementById("btn_help_wht_b");
     questionMark.addEventListener("click", function() {
       alert("Please wait until the players to finish the game");
     });
