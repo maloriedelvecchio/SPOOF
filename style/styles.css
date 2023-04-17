@@ -117,17 +117,12 @@ button.help {
   display: block;
 }
 
-#btn_help_wht_r {
-  color: #ED7657;
-}
-
-#btn_help_wht_b {
-  color: #61C9C8;
+#btn_help_blue {
+  background-color: #61C9C8;
 }
 
 #btn_help_red {
   background-color: #ED7657;
-  color: #FBF9ED;
 }
 
 button.nav-back {
@@ -153,8 +148,6 @@ button.nav-exit {
 #btn_nav_blue {
   background-color: #61C9C8;
 }
-  
-
 
 /*--------------  FORM  --------------*/
 
@@ -288,6 +281,20 @@ li {
 
 footer {
   padding: 1rem;
+}
+
+.popover-body {
+  font-family: 'futura-pt', 'jost', sans-serif;
+  color: #451F27;
+}
+
+.popover-header {
+  background-color:#F9EACA;
+  border-bottom: 1px solid #F7E0B2;
+}
+
+.popover {
+  background-color: #FBF9ED;
 }
 
 /*-----------------  WHEEL STYLE  -----------------*/
