@@ -137,3 +137,11 @@ spinBtn.addEventListener("click", () => {
     }
   }, 10);
 });
+
+/* --------------- No Scroll --------------------- */
+function disable_scroll_mobile(){
+  document.addEventListener('touchmove', preventDefault, false);
+}
+function enable_scroll_mobile(){
+  document.removeEventListener('touchmove', preventDefault, false);
+}
