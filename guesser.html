@@ -25,13 +25,13 @@
             <h2>What is being acted out?</h2>
         </header>
         
-                <form id="guessForm" name="guessForm">
-                    <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
-                    <input type="submit" id="text-submit" value="send">
-                </form>
+        <form id="guessForm" name="guessForm">
+            <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
+            <input type="submit" id="text-submit" value="send">
+        </form>
 
         <footer>
-            <button class="help" id="btn_help_red" alt="Help">
+            <button class="help" id="btn_help_red" data-toggle="popover" title="Think outside the box!" data-content="Guesses can be a word or a phrase. Incorrect guesses will displayed above the text field." data-placement="bottom">
                 <img src="assets/icon_help_white.png">
             </button>
         </footer>
@@ -39,10 +39,13 @@
 
 <script src="script/guess.js" type="module"></script>
 <script>
-    const questionMark = document.getElementById("btn_help_red");
-    questionMark.addEventListener("click", function() {
-        alert("Guesses can be a word or a phrase. Incorrect guesses will appear above the text field.");
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
     });
+    
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 </body>
 </html>
