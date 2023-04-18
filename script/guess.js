@@ -137,47 +137,19 @@ function writeSpinData(value) {
     return false; // Incorrect answer
   }
 
-  /*-------------------Kyle's--------------*/
-  function generateVariations(answer) {
-    const baseAnswer = answer.toLowerCase();
-    const variations = [
-      baseAnswer,
-      baseAnswer.replace("you are ", ""),
-      baseAnswer.replace("you are ", "you're "),
-      baseAnswer.replace(/ /g, ''), // remove spaces
-      baseAnswer.replace(/ /g, '-') // replace spaces with hyphens
-    ];
-    return variations;
-  }
-
-  function checkAnswer(userInput, correctAnswer) {
-    userInput = userInput.toLowerCase();
-    correctAnswer = correctAnswer.toLowerCase();
-    const variations = generateVariations(correctAnswer);
-
-    for (let i = 0; i < variations.length; i++) {
-      if (userInput === variations[i]) {
-        return true; // Correct answer
-      }
-    }
-    return false; // Incorrect answer
-  }
-
-  document.getElementById("guessForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let x = document.forms["guessForm"]["text-input"].value;
-    readSpinData().then(function (response){
-      console.log(x);
-      console.log(response);
-      if (x == response.value) {
-        alert("Correct");
-        return true;
-      }
-      else {
-  
-        alert("Not Correct");
-      }
-
-    })
-    });
-   
+ document.getElementById("guessForm").addEventListener("submit", function(e){
+ e.preventDefault();
+ let x = document.forms["guessForm"]["text-input"].value;
+ readSpinData().then(function (response){
+   console.log(x);
+   console.log(response);
+   if (checkAnswer(x, response.value)) {
+     alert("Correct");
+     return true;
+   }
+   else {
+     alert("Not Correct");
+   }
+ })
+});
+   abc
