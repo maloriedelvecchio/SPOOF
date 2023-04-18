@@ -1,21 +1,3 @@
-
- document.getElementById("guessForm").addEventListener("submit", function(e){
- e.preventDefault();
- let x = document.forms["guessForm"]["text-input"].value;
- readSpinData().then(function (response){
-   console.log(x);
-   console.log(response);
-   if (checkAnswer(x, response.value)) {
-     alert("Correct");
-     return true;
-   }
-   else {
-     alert("Not Correct");
-   }
- })
-});
-   abc
-
 /*--------------- Setup - Firebase -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -32,6 +14,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
 /*--------------- Read Data - Guesser -------------*/
 
 async function readSpinData(){
