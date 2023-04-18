@@ -1,5 +1,3 @@
-
-
 /*--------------- Setup - Firebase -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -16,6 +14,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
 /*--------------- Read Data - Guesser -------------*/
 
 async function readSpinData(){
@@ -32,10 +31,6 @@ async function readSpinData(){
   });
   return response;
 }
-
-
- // readSpinData(i.value)
-
 
 /*--------------- Write Data - Player -------------*/
 

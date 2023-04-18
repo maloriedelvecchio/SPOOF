@@ -45,7 +45,31 @@ function writeSpinData(value) {
    function checkAnswer(userInput, correctAnswer) {
     userInput = userInput.toLowerCase();
     correctAnswer = correctAnswer.toLowerCase();
+   }
+
+/*--------------- Ahmet's code -------------*/
+
+    document.getElementById("guessForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let x = document.forms["guessForm"]["text-input"].value;
+      readSpinData().then(function (response){
+        console.log(x);
+        console.log(response);
+        if (x == response.value) {
+          alert("Correct");
+          return true;
+        }
+        else {
     
+          alert("Not Correct");
+        }
+  
+      })
+      });
+     
+
+    /*---------------NEW CODE----------------*/
+
     const variations = [
       correctAnswer,
       "You are brushing your teeth",
@@ -127,12 +151,13 @@ function writeSpinData(value) {
       if (userInput === variations[i]) {
         return true; // Correct answer
       }
+      else {
+        return false; return false; // Incorrect answer
+      }
     }
-  
-    return false; // Incorrect answer
-  }
 
   /*-------------------Kyle's--------------*/
+
   function generateVariations(answer) {
     const baseAnswer = answer.toLowerCase();
     const variations = [
@@ -157,22 +182,3 @@ function writeSpinData(value) {
     }
     return false; // Incorrect answer
   }
-
-  document.getElementById("guessForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let x = document.forms["guessForm"]["text-input"].value;
-    readSpinData().then(function (response){
-      console.log(x);
-      console.log(response);
-      if (x == response.value) {
-        alert("Correct");
-        return true;
-      }
-      else {
-  
-        alert("Not Correct");
-      }
-
-    })
-    });
-   
