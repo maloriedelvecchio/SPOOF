@@ -31,29 +31,21 @@
       </button>
     </nav>
    
-    <div class="row">
-      <header>
-        <h3>Spin the wheel to get your prompt</h3>
-      </header>
+    <header>
+      <h2 id="h2-whitebg">Spin the wheel to get your prompt</h2>
+    </header>
+
+    <div class="container" id="wheel-container">
+      <div class="wheel_box">
+        <canvas id="spinWheel"></canvas>
+        <button id="spin_btn">SPIN</button>
+        <i class="fa-solid fa-location-arrow"></i>
+      </div>
+      <div id="text"><p>Lets play!</p></div>
     </div>
 
-    <div class="row">
-      <div class="container-wheel">
-        <div class="wheel_box">
-          <canvas id="spinWheel"></canvas>
-          <button id="spin_btn">SPIN</button>
-          <i class="fa-solid fa-location-arrow"></i>
-        </div>
-      </div>
-    </div>    
-    <div class="row">
-      <footer>
-        <div id="prompt"><p>Lets Play!</p></div>
-      </footer>
-    </div>
   </div>
   
-
   <!---------------  SCRIPT  --------------------->
   
   <script src="script/script.js" type="module"></script>

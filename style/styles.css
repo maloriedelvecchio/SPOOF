@@ -209,6 +209,10 @@ h2 {
   padding-top: 0;
 }
 
+#h2-whitebg {
+  padding-top: 10%;
+}
+
 h3 {
   font-size: 2em;
   padding: 1.5rem;
@@ -346,11 +350,11 @@ main {
 
 /*-----------------  WHEEL STYLE  -----------------*/
 
-.container-wheel {
+/* old container style for wheel- throws off formatting
+.container {
   width: 90%;
   max-width: 34.37rem;
   margin-top: 3rem;
-  margin-right: 0;
   max-height: 90vh;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -358,6 +362,11 @@ main {
   left: 50%;
   padding: 3rem; 
   border-radius: 1rem;
+}*/
+
+video {
+  display: block;
+  margin: 0 auto;
 }
 
 .wheel_box {
