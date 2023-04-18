@@ -63,4 +63,93 @@ function writeSpinData(value) {
 
     })
     });
-   
+    /*--------------- Validation of the answers -------------*/
+   function checkAnswer(userInput, correctAnswer) {
+  userInput = userInput.toLowerCase();
+  correctAnswer = correctAnswer.toLowerCase();
+  
+  const variations = [
+    correctAnswer,
+    "You are brushing your teeth",
+    "You are doing a magic trick",
+    "You are playing the piano",
+    "You are playing basketball",
+    "You are taking a selfie",
+    "You are doing a yoga pose",
+    "You are baking a cake",
+    "You are walking a dog",
+    "You are opening a present",
+    "You are playing video games",
+    "You are fishing",
+    "You are rock climbing",
+    correctAnswer + "'re",
+    correctAnswer.replace(/ /g, ''), // remove spaces
+    correctAnswer.replace(/ /g, '-'), // replace spaces with hyphens
+    "You are brushing your teeth",
+    "You're brushing your teeth",
+    "Brushing teeth",
+    "Brushing your teeth",
+    "You are doing a magic trick",
+    "You're doing a magic trick",
+    "Doing a magic trick",
+    "Performing a magic trick",
+    "Magic",
+    "Casting a spell",
+    "You are playing the piano",
+    "You're playing the piano",
+    "Playing piano",
+    "Playing the piano",
+    "piano",
+    "You are playing basketball",
+    "You're playing basketball",
+    "Playing basketball",
+    "basketball",
+    "You are taking a selfie",
+    "You're taking a selfie",
+    "Taking selfie",
+    "Taking a selfie",
+    "Selfie",
+    "You are doing a yoga pose",
+    "You're doing a yoga pose",
+    "Doing a yoga pose",
+    "Doing yoga",
+    "yoga pose",
+    "yoga",
+    "You are baking a cake",
+    "You're baking a cake",
+    "Baking cake",
+    "Baking a cake",
+    "Making a cake",
+    "Baking",
+    "You are walking a dog",
+    "You're walking a dog",
+    "Walking dog",
+    "Walking a dog",
+    "You are opening a present",
+    "You're opening a present",
+    "Opening present",
+    "Opening a present",
+    "You are playing video games",
+    "You're playing video games",
+    "Playing video games",
+    "Playing Xbox",
+    "Playing Play Station",
+    "video games",
+    "You are fishing",
+    "You're fishing",
+    "Go Fishing",
+    "Fishing",
+    "You are rock climbing",
+    "You're rock climbing",
+    "Rock climbing",
+    "Climbing"
+];
+
+  for (let i = 0; i < variations.length; i++) {
+    if (userInput === variations[i]) {
+      return true; // Correct answer
+    }
+  }
+
+  return false; // Incorrect answer
+}
