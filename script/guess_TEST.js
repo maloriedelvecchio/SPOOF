@@ -32,10 +32,6 @@ async function readSpinData(){
   return response;
 }
 
-
- // readSpinData(i.value)
-
-
 /*--------------- Write Data - Player -------------*/
 
 function writeSpinData(value) {
