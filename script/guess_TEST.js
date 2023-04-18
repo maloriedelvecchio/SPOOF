@@ -32,20 +32,21 @@ async function readSpinData(){
   return response;
 }
 
-/*--------------- Write Data - Player -------------*/
+/*--------------- Write Data - Player -------------
 
 function writeSpinData(value) {
   const db = getDatabase();
   set(ref(db, 'spinData/' + 1), {
     value
   });
-  }
+  }*/
 
    /*--------------- Validation of the answers -------------*/
-   function checkAnswer(userInput, correctAnswer) {
+   /*----dupe in kyle's-----*/
+  /*function checkAnswer(userInput, correctAnswer) {
     userInput = userInput.toLowerCase();
     correctAnswer = correctAnswer.toLowerCase();
-   }
+  }*/
 
 /*--------------- Ahmet's code -------------*/
 
@@ -152,7 +153,7 @@ function writeSpinData(value) {
         return true; // Correct answer
       }
       else {
-        return false; return false; // Incorrect answer
+        return false; // Incorrect answer
       }
     }
 
