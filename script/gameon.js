@@ -38,7 +38,6 @@ function checkGameState(){
       btn_role_b.style.cursor = 'default';    
       btn_role_a.style.pointerEvents = 'none';
       btn_role_a.style.cursor = 'default';
-      location.href = "wazaaa.html"
     }
     else {
       btn_role_b.style.pointerEvents = 'auto';
