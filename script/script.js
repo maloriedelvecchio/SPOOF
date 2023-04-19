@@ -21,7 +21,14 @@ function writeSpinData(value, index) {
     value,
     index
   });
-  }
+}
+
+function writeGameOn(value) {
+    const db = getDatabase();
+    set(ref(db, 'gameOn/'), {
+      value
+    });
+}
 /* --------------- Spin Wheel  --------------------- */
 const spinWheel = document.getElementById("spinWheel");
 const spinBtn = document.getElementById("spin_btn");
@@ -42,22 +49,7 @@ const spinValues = {
     { minDegree: 151, maxDegree: 180, value: "Playing video games" },
     { minDegree: 121, maxDegree: 150, value: "Fishing" },
     { minDegree: 91, maxDegree: 120, value: "Rock climbing" },
-  ],
-
-  alternate: [ 
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-    { value: "brush teeth" || "brushing teeth" || "toothbrush" },
-]
+  ]
 }
 
 /* --------------- Size Of Each Piece  --------------------- */
@@ -128,6 +120,7 @@ const generateValue = (angleValue) => {
 let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
+  writeGameOn(true);
   spinBtn.disabled = true;
   text.innerHTML = `<p>Get ready to Spoof!</p>`;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
