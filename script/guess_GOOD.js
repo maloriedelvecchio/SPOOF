@@ -21,7 +21,7 @@ async function readSpinData(){
   const dbRef = ref(getDatabase());
   const response = await get(child(dbRef, `spinData/1`)).then((snapshot) => {
     if (snapshot.exists()) {
-      console.log(snapshot.val());
+      console.log(snapshot.val());              // writes prompt as value -------// object(i) is "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
       return snapshot.val();
     } else {
       console.log("No data available");
@@ -43,19 +43,22 @@ function writeSpinData(value) {
 
   document.getElementById("guessForm").addEventListener("submit", function(e){
     e.preventDefault();
-    let x = document.forms["guessForm"]["text-input"].value;
-    readSpinData().then(function (response){
-      console.log(x);
-      console.log(response);
-      if (x == response.value) {
+    let x = document.forms["guessForm"]["text-input"].value;   //  let x be the text inputted
+    readSpinData().then(function (response){                   //  access db and get value
+      console.log(x);                                          //  writes x (user input?) to log
+      console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
+      if (x == response.value) {                               //  if text inputted is equal to the value of the the PROMPT 
         alert("Correct");
         return true;
       }
       else {
-  
         alert("NotCorrect");
+
+        const wrongGuess = document.querySelector('#wrong');
+        let li = document.createElement('li');
+        li.textContent = x;
+        wrongGuess.appendChild(li);
       }
 
     })
-    });
-   
+  });

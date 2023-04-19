@@ -147,15 +147,6 @@ function writeSpinData(value) {
       "Rock climbing",
       "Climbing"
   ];
-  
-    for (let i = 0; i < variations.length; i++) {
-      if (userInput === variations[i]) {
-        return true; // Correct answer
-      }
-      else {
-        return false; // Incorrect answer
-      }
-    }
 
   /*-------------------Kyle's--------------*/
 

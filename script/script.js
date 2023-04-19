@@ -54,6 +54,7 @@ const spinValues = [
   { minDegree: 121, maxDegree: 150, value: "You are fishing" },
   { minDegree: 91, maxDegree: 120, value: "You are rock climbing" },
 ];
+
 /* --------------- Size Of Each Piece  --------------------- */
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
 /* --------------- Background Colors  --------------------- */
