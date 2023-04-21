@@ -86,7 +86,6 @@ button.main:after {
   background: #F7E0B2;
   border-radius: 100%;
   opacity: .6;
-
   transform: scale(0);
 }
 
@@ -142,7 +141,21 @@ button.main {
   background-color: #61C9C8;
 }
 
-#btn_role {
+#btn_role, #btn_role_a {
+  background-color: #451F27;
+  border: 10px solid #ED7657;
+  border-radius: 15px;
+  margin: 2% auto;
+  min-height: 100px;
+  width: 50%;
+  font-size: 1em;
+  text-transform: capitalize; 
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.enabled {
   background-color: #451F27;
   border: 10px solid #ED7657;
   border-radius: 15px;
@@ -169,12 +182,10 @@ button.help {
 
 #btn_help_blue {
   background-color: #61C9C8;
- 
 }
 
 #btn_help_red {
   background-color: #ED7657;
-
 }
 
 button.nav-back {
@@ -195,12 +206,17 @@ button.nav-exit {
 
 #btn_nav_red {
   background-color: #ED7657;
-
 }
 
 #btn_nav_blue {
   background-color: #61C9C8;
+}
 
+#btn_role_a.disabled {
+  background-color: #7d6268;
+  border-color: #f29f89;
+  pointer-events: none;
+  cursor: default;
 }
 
 /*--------------  FORM  --------------*/

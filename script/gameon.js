@@ -38,12 +38,16 @@ function checkGameState(){
     //  btn_role_b.style.cursor = 'default';    
       btn_role_a.style.pointerEvents = 'none';
       btn_role_a.style.cursor = 'default';
+      btn_role_a.classList.remove("enabled");
+      btn_role_a.classList.add("disabled");
     }
     else {
    //   btn_role_b.style.pointerEvents = 'auto';
    //   btn_role_b.style.cursor = 'pointer';    
       btn_role_a.style.pointerEvents = 'auto';
       btn_role_a.style.cursor = 'pointer';
+      btn_role_a.classList.remove("disabled");
+      btn_role_a.classList.add("enabled");
     }
   })
 }
