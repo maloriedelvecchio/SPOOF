@@ -34,14 +34,14 @@ function checkGameState(){
     console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
 
     if(response.value){  
-      btn_role_b.style.pointerEvents = 'none';
-      btn_role_b.style.cursor = 'default';    
+     // btn_role_b.style.pointerEvents = 'none';
+    //  btn_role_b.style.cursor = 'default';    
       btn_role_a.style.pointerEvents = 'none';
       btn_role_a.style.cursor = 'default';
     }
     else {
-      btn_role_b.style.pointerEvents = 'auto';
-      btn_role_b.style.cursor = 'pointer';    
+   //   btn_role_b.style.pointerEvents = 'auto';
+   //   btn_role_b.style.cursor = 'pointer';    
       btn_role_a.style.pointerEvents = 'auto';
       btn_role_a.style.cursor = 'pointer';
     }

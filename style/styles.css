@@ -64,21 +64,75 @@ body {
 
 /*--------------  BUTTONS  --------------*/
 
+button {
+  font-family: 'Trilby', 'zilla slab', serif;
+  font-weight: 600;
+  color: #FBF9ED;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+button.main:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: #F7E0B2;
+  border-radius: 100%;
+  opacity: .6;
+
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+button.main:not(:active):after {
+  animation: ripple 1.5s ease-out;
+}
+
+/* fixes initial animation run, without user input, on page load.*/
+button:after {
+  visibility: hidden;
+}
+
+button.main:focus:after {
+  visibility: visible;
+}
+
 button.main {
   width: 100%;
   min-height: 80px;
   display: block;
   margin: 0 auto;
-  padding: 1%;
   cursor: pointer;
   text-transform: uppercase;
   border: none;
   border-radius: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 #btn_brown {
   background-color: #451F27;
 }
+
 
 #btn_red {
   background-color: #ED7657;
@@ -99,6 +153,10 @@ button.main {
   text-transform: capitalize; 
 }
 
+button:focus {
+  outline: none;
+}
+
 button.help {
   background-color: #FBF9ED;
   width: 3.75em;
@@ -111,10 +169,12 @@ button.help {
 
 #btn_help_blue {
   background-color: #61C9C8;
+ 
 }
 
 #btn_help_red {
   background-color: #ED7657;
+
 }
 
 button.nav-back {
@@ -135,10 +195,12 @@ button.nav-exit {
 
 #btn_nav_red {
   background-color: #ED7657;
+
 }
 
 #btn_nav_blue {
   background-color: #61C9C8;
+
 }
 
 /*--------------  FORM  --------------*/
@@ -180,14 +242,6 @@ input {
 
 /*-------------- TEXT --------------*/
 
-a {
-  font-family: 'Trilby', 'zilla slab', serif;
-  font-weight: 600;
-  color: #FBF9ED;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 1.3em;
-}
 
 h1, h2, h3, h4 {
   font-family: 'Trilby', 'Zilla Slab', serif;
