@@ -64,21 +64,74 @@ body {
 
 /*--------------  BUTTONS  --------------*/
 
+button {
+  font-family: 'Trilby', 'zilla slab', serif;
+  font-weight: 600;
+  color: #FBF9ED;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+button.main:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: #F7E0B2;
+  border-radius: 100%;
+  opacity: .6;
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+button.main:not(:active):after {
+  animation: ripple 1.5s ease-out;
+}
+
+/* fixes initial animation run, without user input, on page load.*/
+button:after {
+  visibility: hidden;
+}
+
+button.main:focus:after {
+  visibility: visible;
+}
+
 button.main {
   width: 100%;
   min-height: 80px;
   display: block;
   margin: 0 auto;
-  padding: 1%;
   cursor: pointer;
   text-transform: uppercase;
   border: none;
   border-radius: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 #btn_brown {
   background-color: #451F27;
 }
+
 
 #btn_red {
   background-color: #ED7657;
@@ -88,7 +141,7 @@ button.main {
   background-color: #61C9C8;
 }
 
-#btn_role {
+#btn_role, #btn_role_a {
   background-color: #451F27;
   border: 10px solid #ED7657;
   border-radius: 15px;
@@ -97,6 +150,24 @@ button.main {
   width: 50%;
   font-size: 1em;
   text-transform: capitalize; 
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.enabled {
+  background-color: #451F27;
+  border: 10px solid #ED7657;
+  border-radius: 15px;
+  margin: 2% auto;
+  min-height: 100px;
+  width: 50%;
+  font-size: 1em;
+  text-transform: capitalize; 
+}
+
+button:focus {
+  outline: none;
 }
 
 button.help {
@@ -141,6 +212,13 @@ button.nav-exit {
   background-color: #61C9C8;
 }
 
+#btn_role_a.disabled {
+  background-color: #7d6268;
+  border-color: #f29f89;
+  pointer-events: none;
+  cursor: default;
+}
+
 /*--------------  FORM  --------------*/
 
 form {
@@ -180,14 +258,6 @@ input {
 
 /*-------------- TEXT --------------*/
 
-a {
-  font-family: 'Trilby', 'zilla slab', serif;
-  font-weight: 600;
-  color: #FBF9ED;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 1.3em;
-}
 
 h1, h2, h3, h4 {
   font-family: 'Trilby', 'Zilla Slab', serif;
@@ -264,6 +334,14 @@ p.prompt {
   font-family: 'Trilby', 'Zilla Slab', serif;
 }
 
+p.score {
+  color: #FBF9ED;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+
 /*-------------- OTHER --------------*/
 
 img {
@@ -299,6 +377,26 @@ ol {
 
 li {
   display: inline-block;
+}
+
+.list-group-horizontal-small {
+  display: block;
+  background: #451F27;
+  padding-left: 0;
+  border: 0.75rem solid #ED7657;
+  border-radius: 15px;
+  box-sizing: border-box;
+  max-height: 200px;
+  margin-bottom: 15%;
+  overflow: scroll;
+}
+
+.list-group-item {
+  background-color: #451F27;
+  padding: 0;
+  vertical-align: center;
+  border: 0;
+
 }
 
 .popover-body {
@@ -347,6 +445,22 @@ nav {
 main {
   vertical-align:middle;
 }
+
+#x-icon {
+  position:relative; 
+  top: 0%;
+  left: 0%;
+  font-size:large;
+  color: #451F27;
+  transform: none;
+}
+
+.hide {
+  display: none;
+}
+
+
+
 
 /*-----------------  WHEEL STYLE  -----------------*/
 
@@ -409,3 +523,4 @@ video {
   color: #451F27;
   transform: rotate(-225deg);
 }
+

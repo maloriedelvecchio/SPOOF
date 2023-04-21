@@ -57,15 +57,24 @@ let possibleAnswers = [
       console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
 
       if(possibleAnswers[response.index].includes(x)){      
-        alert("Correct");                                     //  if text inputted is equal to the value of the the PROMPT           
+        window.location.href = "guesser_winner.html"
+        // alert("Correct");                                     //  if text inputted is equal to the value of the the PROMPT           
         return true;
       }
       else {
-        alert("NotCorrect");
+        // alert("NotCorrect");
         const wrongGuess = document.querySelector('#wrong');
         let li = document.createElement('li');
-        li.textContent = x;
+        li.className = "list-group-item";
+        li.innerHTML = '<p class="score">' + x + '</p>';
         wrongGuess.appendChild(li);
+        wrongGuess.classList.remove("hide");
       }
     })
   });
+
+/* with icon
+
+  li.innerHTML = '<div id="icon"><p class="score"><i class="fa-solid fa-circle-xmark" id="x-icon" style="color: #ed7657;"></i>' + '&nbsp;&nbsp;' + x + '</p></div>';
+
+  */
