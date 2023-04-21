@@ -1,4 +1,4 @@
-/*--------------- Setup - Firebase -------------*/
+/*--------------- Setup - Firebase (Malorie with some help from Dave)-------------*/
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {

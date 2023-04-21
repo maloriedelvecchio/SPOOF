@@ -1,6 +1,6 @@
 /* this is a test timer that will be linked to all pages that require a timer, I intend to add the timer data to the firebase to sync the data accross multiple pages.*/ 
 
-/*--------------- Setup - Firebase (Malorie and Dave) -------------*/
+/*--------------- Setup - Firebase (Malorie with some help from Dave) -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
