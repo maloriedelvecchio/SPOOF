@@ -29,12 +29,12 @@ function writeGameOn(value) {
       value
     });
 }
-/* --------------- Spin Wheel  --------------------- */
+/* --------------- Spin Wheel (Dave) --------------------- */
 const spinWheel = document.getElementById("spinWheel");
 const spinBtn = document.getElementById("spin_btn");
 const text = document.getElementById("text");
 
-/* --------------- Minimum And Maximum Angle For A value  --------------------- */
+/* --------------- Minimum And Maximum Angle For A value (Dave) --------------------- */
 const spinValues = {
   prompt: [
     { minDegree: 61, maxDegree: 90, value: "Brushing your teeth" },
@@ -52,27 +52,15 @@ const spinValues = {
   ]
 }
 
-/* --------------- Size Of Each Piece  --------------------- */
+/* --------------- Size Of Each Piece (Dave) --------------------- */
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
-/* --------------- Background Colors  --------------------- */
+/* --------------- Background Colors (Dave) --------------------- */
 
 var spinColors = [
-  "#ED7657",
-  "#61C9C8",
-  "#F7E0B2",
-  "#ED7657",
-  "#61C9C8",
-  "#F7E0B2",
-  "#ED7657",
-  "#61C9C8",
-  "#F7E0B2",
-  "#ED7657",
-  "#61C9C8",
-  "#F7E0B2",
+  "#ED7657", "#61C9C8","#F7E0B2","#ED7657","#61C9C8","#F7E0B2","#ED7657","#61C9C8","#F7E0B2","#ED7657","#61C9C8","#F7E0B2",
 ];
 
-/* --------------- Chart --------------------- */
-/* --------------- Guide : https://chartjs-plugin-datalabels.netlify.app/guide/getting-started.html --------------------- */
+/* --------------- Chart (Dave) --------------------- */
 let spinChart = new Chart(spinWheel, {
   plugins: [ChartDataLabels],
   type: "pie",
@@ -102,7 +90,7 @@ let spinChart = new Chart(spinWheel, {
     },
   },
 });
-/* --------------- Display Value Based On The Angle --------------------- */
+/* --------------- Display Value Based On The Angle (Dave) --------------------- */
 const generateValue = (angleValue) => {
   let j = 0;
   for (let i of spinValues.prompt) {
@@ -116,7 +104,7 @@ const generateValue = (angleValue) => {
     j++
   }
 };
-/* --------------- Spinning Code --------------------- */
+/* --------------- Spinning Code (Dave)--------------------- */
 let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
