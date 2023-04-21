@@ -61,11 +61,20 @@ let possibleAnswers = [
         return true;
       }
       else {
-        alert("NotCorrect");
+        // alert("NotCorrect");
         const wrongGuess = document.querySelector('#wrong');
         let li = document.createElement('li');
-        li.textContent = x;
+        li.className = "list-group-item";
+        li.innerHTML = '<p class="score">' + x + '</p>';
+
         wrongGuess.appendChild(li);
       }
     })
   });
+
+
+/* with icon
+
+  li.innerHTML = '<div id="icon"><p class="score"><i class="fa-solid fa-circle-xmark" id="x-icon" style="color: #ed7657;"></i>' + '&nbsp;&nbsp;' + x + '</p></div>';
+
+  */

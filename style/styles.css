@@ -264,6 +264,14 @@ p.prompt {
   font-family: 'Trilby', 'Zilla Slab', serif;
 }
 
+p.score {
+  color: #FBF9ED;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+
 /*-------------- OTHER --------------*/
 
 img {
@@ -299,6 +307,26 @@ ol {
 
 li {
   display: inline-block;
+}
+
+.list-group-horizontal-small {
+  display: block;
+  background: #451F27;
+  padding-left: 0;
+  border: 0.75rem solid #ED7657;
+  border-radius: 15px;
+  box-sizing: border-box;
+  max-height: 200px;
+  margin-bottom: 15%;
+  overflow: scroll;
+}
+
+.list-group-item {
+  background-color: #451F27;
+  padding: 0;
+  vertical-align: center;
+  border: 0;
+
 }
 
 .popover-body {
@@ -346,6 +374,15 @@ nav {
 
 main {
   vertical-align:middle;
+}
+
+#x-icon {
+  position:relative; 
+  top: 0%;
+  left: 0%;
+  font-size:large;
+  color: #451F27;
+  transform: none;
 }
 
 /*-----------------  WHEEL STYLE  -----------------*/
@@ -409,3 +446,4 @@ video {
   color: #451F27;
   transform: rotate(-225deg);
 }
+

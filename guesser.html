@@ -25,13 +25,15 @@
             <h2 id="h2-whitebg">What is being acted out?</h2>
         </header>
 
-        <ul id="wrong"></ul>
+        <div class="container">
+            <ul class="list-group-horizontal-small" id="wrong"></ul>
 
-        <form id="guessForm" name="guessForm">
-            <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
-            <input type="submit" id="text-submit" value="send">
-        </form>
-
+            <form id="guessForm" name="guessForm">
+                <input type="text" id="text-input" name="text-input" placeholder="Type your guess here">
+                <input type="submit" id="text-submit" value="send">
+            </form>
+        </div>
+       
         <footer>
             <button class="help" id="btn_help_red" data-toggle="popover" title="Think outside the box!" data-content="Guesses can be a word or a phrase. Incorrect guesses will displayed above the text field." data-placement="bottom">
                 <img src="assets/icon_help_white.png">
@@ -39,7 +41,8 @@
         </footer>
     </div>
 
-<script src="script/guess_GOOD.js" type="module"></script>
+<script src="script/guess.js" type="module"></script>
+<script src="https://kit.fontawesome.com/9281a1cc83.js" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
