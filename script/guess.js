@@ -57,7 +57,8 @@ let possibleAnswers = [
       console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
 
       if(possibleAnswers[response.index].includes(x)){      
-        alert("Correct");                                     //  if text inputted is equal to the value of the the PROMPT           
+        window.location.href = "guesser_winner.html"
+        // alert("Correct");                                     //  if text inputted is equal to the value of the the PROMPT           
         return true;
       }
       else {
@@ -66,12 +67,11 @@ let possibleAnswers = [
         let li = document.createElement('li');
         li.className = "list-group-item";
         li.innerHTML = '<p class="score">' + x + '</p>';
-
         wrongGuess.appendChild(li);
+        wrongGuess.classList.remove("hide");
       }
     })
   });
-
 
 /* with icon
 

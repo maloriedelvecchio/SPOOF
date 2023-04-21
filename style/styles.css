@@ -455,6 +455,13 @@ main {
   transform: none;
 }
 
+.hide {
+  display: none;
+}
+
+
+
+
 /*-----------------  WHEEL STYLE  -----------------*/
 
 /* old container style for wheel- throws off formatting
