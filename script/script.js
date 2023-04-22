@@ -149,10 +149,6 @@ const generateValue = (angleValue) => {
   }
 };
 
-/* ---------------- Start Timer ------------------- */
-
-
-
 /* --------------- Spinning Code (Dave)--------------------- */
 
 let count = 0;

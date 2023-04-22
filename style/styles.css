@@ -155,15 +155,11 @@ button.main {
   overflow: hidden;
 }
 
-.enabled {
-  background-color: #451F27;
-  border: 10px solid #ED7657;
-  border-radius: 15px;
-  margin: 2% auto;
-  min-height: 100px;
-  width: 50%;
-  font-size: 1em;
-  text-transform: capitalize; 
+#btn_role_a.disabled {
+  background-color: #7d6268;
+  border-color: #f29f89;
+  pointer-events: none;
+  cursor: default;
 }
 
 button:focus {
@@ -212,12 +208,7 @@ button.nav-exit {
   background-color: #61C9C8;
 }
 
-#btn_role_a.disabled {
-  background-color: #7d6268;
-  border-color: #f29f89;
-  pointer-events: none;
-  cursor: default;
-}
+
 
 /*--------------  GUESS FORM (Malorie) --------------*/
 

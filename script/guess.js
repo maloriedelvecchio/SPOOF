@@ -74,3 +74,48 @@ let possibleAnswers = [
       };
     });
   });
+
+  /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
+
+async function readGameOn(){
+  const dbRef = ref(getDatabase());
+  const response = await get(child(dbRef, `gameOn/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());              // writes prompt as value 
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  return response;
+}
+
+/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
+
+function checkGameState(){
+  readGameOn().then(function (response){                                                     
+    console.log(response);
+
+    if(response.value){  
+      document.getElementById("text-input").disabled = false;
+      document.getElementById("text-submit").disabled = false;
+    }
+    else {
+      document.getElementById("text-input").disabled = true;
+      document.getElementById("text-submit").disabled = true;
+    }
+  })
+}
+
+/*----------------- General (Malorie w/Help) ------------------*/
+
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+  setInterval(checkGameState, 1000); /// this one calls the function every second
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
