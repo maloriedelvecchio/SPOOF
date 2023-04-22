@@ -19,28 +19,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script> 
 </head>
+<style>
+  #timer {
+      font-size: 3em;
+      font-weight: 700;
+      padding: 1rem;
+      color:#ED7657;
+      font-family: 'Trilby', 'Zilla Slab', serif;
+  }
+</style>
 <body>
   <div class="container">
-    <nav>
-      <button class="nav-exit" id="btn_nav_red" alt="Exit">
-        <img src="assets/icon_exit.png">
-      </button>
-    </nav>
-   
-    <header>
-      <h2 id="h2-whitebg">Spin the wheel to get your prompt</h2>
-    </header>
 
-    <div class="container" id="wheel-container">
-      <div class="wheel_box">
-        <canvas id="spinWheel"></canvas>
-        <button id="spin_btn">SPIN</button>
-        <i class="fa-solid fa-location-arrow"></i>
+    <section id="spin-page">
+      <nav>
+        <button class="nav-exit" id="btn_nav_red" alt="Exit">
+          <img src="assets/icon_exit.png">
+        </button>
+      </nav>
+     
+      <header>
+        <h2 id="h2-whitebg">Spin the wheel to get your prompt</h2>
+      </header>
+  
+      <div class="container" id="wheel-container">
+        <div class="wheel_box">
+          <canvas id="spinWheel"></canvas>
+          <button id="spin_btn">SPIN</button>
+          <i class="fa-solid fa-location-arrow"></i>
+        </div>
+        <div id="text"><p>Lets play!</p></div>
       </div>
-      <div id="text"><p>Lets play!</p></div>
-    </div>
-
-  </div>  
+    </section>
+    
+    <section id="prompt-page" class="hide">
+        <div class="modal">
+            <nav>
+                <button class="nav-exit" id="btn_nav_red" alt="Exit">
+                  <img src="assets/icon_exit.png">
+                </button>
+            </nav>
+            
+            <div class="row">
+                <header>
+                    <h5>Act as if you are...</h5>
+                </header>
+            </div>
+        
+            <div class="row">
+                <div id="prompt"></div>
+            </div>
+        
+            <div class="row">
+                <div class="timer" id="timer" style="margin-bottom: 16px;">03:00</div>
+            </div>
+        </div>
+    </section>
+  </div>
+ 
   <script src="script/script.js" type="module"></script>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+    
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
 </body>   
 </html>

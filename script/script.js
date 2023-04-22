@@ -103,20 +103,55 @@ let spinChart = new Chart(spinWheel, {
 });
 
 /* --------------- Display Value Based On Angle (Dave) --------------------- */
+/* --------------- Change to Prompt (Malorie) --------------------- */
+
+
+const wheelActive = document.querySelector('#spin-page');
+const promptActive = document.querySelector('#prompt-page')
+const promptSpot = document.querySelector('#prompt');
 
 const generateValue = (angleValue) => {
   let j = 0;
   for (let i of spinValues.prompt) {
     
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      text.innerHTML = `<p>Act as if "${i.value}" </p>`;
-      writeSpinData(i.value, j)
+      wheelActive.classList.add("hide");
+      promptActive.classList.remove("hide");
+      promptSpot.innerHTML = `<p class="prompt">${i.value}</p>`;
+      writeSpinData(i.value, j);
+      
+/* --------------- Start Timer (Dave?) --------------------- */
+      
+      const timer = document.getElementById("timer");
+        let time = 180;
+
+        function updateTimer() {
+          let minutes = Math.floor(time / 60);
+          let seconds = time % 60;
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          timer.innerHTML = `${minutes}:${seconds}`;
+
+          if (time === 0) {
+            clearInterval(countdownInterval);
+          }
+
+          time--;
+        }
+
+        let countdownInterval = setInterval(updateTimer, 1000);
       spinBtn.disabled = false;
       break;
     }
     j++
   }
 };
+
+/* ---------------- Start Timer ------------------- */
+
+
 
 /* --------------- Spinning Code (Dave)--------------------- */
 
