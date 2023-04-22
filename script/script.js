@@ -160,7 +160,6 @@ let resultValue = 101;
 spinBtn.addEventListener("click", () => {
   writeGameOn(true);
   spinBtn.disabled = true;
-  text.innerHTML = `<p>Get ready to Spoof!</p>`;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
   let rotationInterval = window.setInterval(() => {
     spinChart.options.rotation = spinChart.options.rotation + resultValue;
