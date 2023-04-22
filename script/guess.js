@@ -1,4 +1,4 @@
-/*--------------- Setup - Firebase -------------*/
+/*--------------- Setup - Firebase (Dave & Malorie) -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-/*--------------- Read Data - Guesser -------------*/
+/*--------------- Read Data - Guesser (Dave & Malorie w/Help) -------------*/
 
 async function readSpinData(){
   const dbRef = ref(getDatabase());
@@ -32,7 +32,7 @@ async function readSpinData(){
   return response;
 }
 
-/*--------------- Possible Answers -------------*/
+/*--------------- Possible Answers (Dave & Malorie) -------------*/
 
 let possibleAnswers = [ 
   ["You are brushing your teeth",   "You're brushing your teeth",   "Brushing teeth",   "Cleaning your teeth",   "Toothbrush"],   
@@ -48,6 +48,8 @@ let possibleAnswers = [
   ["You are fishing", "You're fishing", "Fishing", "Fishing rod"],
   ["You are rock climbing", "You're rock climbing", "Rock climbing", "Climbing"]
 ];
+
+/*-------------------- Win/Lose (Malorie w/Help) -----------------*/
 
   document.getElementById("guessForm").addEventListener("submit", function(e){
     e.preventDefault();
@@ -71,9 +73,3 @@ let possibleAnswers = [
       };
     });
   });
-
-/* with icon
-
-  li.innerHTML = '<div id="icon"><p class="score"><i class="fa-solid fa-circle-xmark" id="x-icon" style="color: #ed7657;"></i>' + '&nbsp;&nbsp;' + x + '</p></div>';
-
-  */

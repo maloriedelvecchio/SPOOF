@@ -1,4 +1,5 @@
-/*--------------- Setup - Firebase -------------*/
+/*--------------- Setup - Firebase (Dave & Malorie) -------------*/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
@@ -14,7 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-/*--------------- Write Data - Player -------------*/
+/*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
+
 function writeSpinData(value, index) {
   const db = getDatabase();
   set(ref(db, 'spinData/' + 1), {
@@ -29,12 +31,15 @@ function writeGameOn(value) {
       value
     });
 }
+
 /* --------------- Spin Wheel (Dave) --------------------- */
+
 const spinWheel = document.getElementById("spinWheel");
 const spinBtn = document.getElementById("spin_btn");
 const text = document.getElementById("text");
 
-/* --------------- Minimum And Maximum Angle For A value (Dave) --------------------- */
+/* --------------- Minimum And Maximum Angle For A Value (Dave) --------------------- */
+
 const spinValues = {
   prompt: [
     { minDegree: 61, maxDegree: 90, value: "Brushing your teeth" },
@@ -53,7 +58,9 @@ const spinValues = {
 }
 
 /* --------------- Size Of Each Piece (Dave) --------------------- */
+
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+
 /* --------------- Background Colors (Dave) --------------------- */
 
 var spinColors = [
@@ -61,6 +68,7 @@ var spinColors = [
 ];
 
 /* --------------- Chart (Dave) --------------------- */
+
 let spinChart = new Chart(spinWheel, {
   plugins: [ChartDataLabels],
   type: "pie",
@@ -90,7 +98,9 @@ let spinChart = new Chart(spinWheel, {
     },
   },
 });
-/* --------------- Display Value Based On The Angle (Dave) --------------------- */
+
+/* --------------- Display Value Based On Angle (Dave) --------------------- */
+
 const generateValue = (angleValue) => {
   let j = 0;
   for (let i of spinValues.prompt) {
@@ -104,7 +114,9 @@ const generateValue = (angleValue) => {
     j++
   }
 };
+
 /* --------------- Spinning Code (Dave)--------------------- */
+
 let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
@@ -128,10 +140,14 @@ spinBtn.addEventListener("click", () => {
   }, 10);
 });
 
-/* --------------- No Scroll --------------------- */
+/* --------------- No Scroll (Malorie) --------------------- */
+
 function disable_scroll_mobile(){
   document.addEventListener('touchmove', preventDefault, false);
 }
 function enable_scroll_mobile(){
   document.removeEventListener('touchmove', preventDefault, false);
 }
+
+disable_scroll_mobile();
+enable_scroll_mobile();

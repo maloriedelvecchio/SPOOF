@@ -1,4 +1,4 @@
-/*--------------- Setup - Firebase -------------*/
+/*--------------- Setup - Firebase (Dave & Malorie) -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
@@ -12,13 +12,16 @@ const firebaseConfig = {
   appId: "1:561624489946:web:45ff71f1b0ae8209d26ae3",
   measurementId: "G-KJG4WMVYS8"
 };
+
+/*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 async function readGameOn(){
   const dbRef = ref(getDatabase());
   const response = await get(child(dbRef, `gameOn/`)).then((snapshot) => {
     if (snapshot.exists()) {
-      console.log(snapshot.val());              // writes prompt as value -------// object(i) is "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
+      console.log(snapshot.val());              // writes prompt as value 
       return snapshot.val();
     } else {
       console.log("No data available");
@@ -29,9 +32,11 @@ async function readGameOn(){
   return response;
 }
 
+/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
+
 function checkGameState(){
-  readGameOn().then(function (response){                   //  access db and get value                                      //  writes x (user input?) to log
-    console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
+  readGameOn().then(function (response){                                                     
+    console.log(response);
 
     if(response.value){  
      // btn_role_b.style.pointerEvents = 'none';
@@ -52,6 +57,7 @@ function checkGameState(){
   })
 }
 
+/*----------------- General (Malorie w/Help) ------------------*/
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
