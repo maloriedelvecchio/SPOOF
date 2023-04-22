@@ -77,6 +77,7 @@ let spinChart = new Chart(spinWheel, {
     datasets: [
       {
         backgroundColor: spinColors,
+        borderColor: "#FBF9ED",
         data: size,
       },
     ],
@@ -84,6 +85,7 @@ let spinChart = new Chart(spinWheel, {
   options: {
     responsive: true,
     animation: { duration: 0 },
+    hover: {mode: null},
     plugins: {
       tooltip: false,
       legend: {
@@ -94,6 +96,7 @@ let spinChart = new Chart(spinWheel, {
         color: "#ffffff",
         formatter: (_, context) => context.chart.data.labels[context.dataIndex],
         font: { size: 24 },
+        display: false,
       },
     },
   },

@@ -70,6 +70,7 @@ let possibleAnswers = [
         li.innerHTML = '<p class="score">' + x + '</p>';
         wrongGuess.appendChild(li);
         wrongGuess.classList.remove("hide");
+        document.getElementById("guessForm").reset();
       };
     });
   });
