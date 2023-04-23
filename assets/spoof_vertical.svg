@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 212.81 483.27" style="enable-background:new 0 0 212.81 483.27;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBF9ED;stroke:#451F27;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#FBF9ED;}
+	.st2{fill:#ED7657;stroke:#ED7657;stroke-width:2;stroke-miterlimit:10;}
+
+	.st1 {
+  		animation: blinker 0.5s infinite;
+	}
+
+	#blink {
+		animation: alt-blinker 0.5s infinite;
+	}
+
+	@keyframes blinker {
+    	0% { opacity: 1;}
+    	100% { opacity: 0;}
+  	}
+
+	@keyframes alt-blinker {
+		0% { opacity: 0;}
+		100% { opacity: 1;}
+	}
+
+</style>
+
+<g id="frame">
+	<path class="st0" d="M188.1,50.6v357.63c0,10.4-7.01,19.5-17.07,22.15L54.84,460.97c-14.52,3.82-28.74-7.13-28.74-22.15V81.19
+		c0-10.4,7.01-19.5,17.07-22.15l116.19-30.59C173.89,24.63,188.1,35.58,188.1,50.6z"/>
+</g>
+<g id="dots">
+	<circle id="blink" class="st1" cx="177.22" cy="32.2" r="7.07"/>
+	<circle class="st1" cx="151.67" cy="30.47" r="7.07"/>
+	<circle id="blink" class="st1" cx="125.69" cy="37.32" r="7.07"/>
+	<circle class="st1" cx="99.7" cy="44.16" r="7.07"/>
+	<circle id="blink" class="st1" cx="73.72" cy="51" r="7.07"/>
+	<circle class="st1" cx="47.74" cy="57.84" r="7.07"/>
+	<circle id="blink" class="st1" cx="28.48" cy="74.19" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="100.67" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="127.54" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="154.41" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="181.28" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="208.15" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="235.02" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="261.89" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="288.76" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="315.63" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="342.5" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="369.37" r="7.07"/>
+	<circle id="blink" class="st1" cx="26.1" cy="396.24" r="7.07"/>
+	<circle class="st1" cx="26.1" cy="423.11" r="7.07"/>
+	<circle id="blink" class="st1" cx="77.72" cy="454.94" r="7.07"/>
+	<circle class="st1" cx="29.49" cy="449.45" r="7.07"/>
+	<circle id="blink" class="st1" cx="51.63" cy="460.81" r="7.07"/>
+	<circle class="st1" cx="103.7" cy="448.1" r="7.07"/>
+	<circle id="blink" class="st1" cx="129.69" cy="441.26" r="7.07"/>
+	<circle class="st1" cx="155.67" cy="434.42" r="7.07"/>
+	<circle id="blink" class="st1" cx="180.19" cy="424.3" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="399.91" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="373.04" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="319.3" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="346.17" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="292.43" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="265.56" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="238.69" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="211.82" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="184.95" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="158.08" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="131.21" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="104.34" r="7.07"/>
+	<circle class="st1" cx="188.1" cy="77.47" r="7.07"/>
+	<circle id="blink" class="st1" cx="188.1" cy="50.6" r="7.07"/>
+</g>
+<g id="spoof">
+	<g>
+		<path class="st2" d="M85.39,151.33v-16.35h10.23v6.19c2.45,0.79,6.84,1.22,11.16,1.22c9.58,0,12.03-1.22,12.03-4.97
+			c0-3.6-2.74-4.61-14.69-5.33c-13.61-0.79-19.37-4.97-19.37-14.83c0-10.87,8.14-16.49,21.1-16.49c7.49,0,14.76,1.37,20.09,3.31
+			v15.41h-10.01v-4.9c-2.52-0.86-5.98-1.3-9.72-1.3c-8.35,0-10.95,1.51-10.95,4.61c0,3.24,2.74,4.18,12.89,4.82
+			c14.69,0.94,21.31,4.18,21.31,15.34c0,10.37-8.42,16.42-22.32,16.42C98.64,154.5,91.08,153.35,85.39,151.33z"/>
+		<path class="st2" d="M84.1,201.04h2.3c2.38,0,3.17-0.65,3.17-2.88v-22.9c0-2.23-0.79-2.88-3.17-2.88h-2.3V160.5h24.7
+			c17.35,0,22.03,8.35,22.03,17.21c0,10.08-6.19,17.28-22.03,17.28h-9.07v3.17c0,2.3,0.72,2.88,3.02,2.88h4.1v11.67H84.1V201.04z
+			 M108.8,185.78c8.5,0,11.52-2.09,11.52-6.7c0-4.75-3.02-6.7-11.52-6.7h-9.07v13.39H108.8z"/>
+		<path class="st2" d="M81.76,245.71c0-17.21,12.03-26.93,25.42-26.93c13.32,0,25.27,9.72,25.27,26.86
+			c0,17.21-11.95,26.79-25.27,26.79C93.78,272.43,81.76,262.85,81.76,245.71z M122.3,245.86c0-9.65-6.91-14.55-15.19-14.55
+			c-8.35,0-15.19,4.9-15.19,14.55c0,9.72,6.84,14.47,15.19,14.47C115.39,260.33,122.3,255.58,122.3,245.86z"/>
+		<path class="st2" d="M81.76,304.71c0-17.21,12.03-26.93,25.42-26.93c13.32,0,25.27,9.72,25.27,26.86
+			c0,17.21-11.95,26.79-25.27,26.79C93.78,331.43,81.76,321.85,81.76,304.71z M122.3,304.86c0-9.65-6.91-14.55-15.19-14.55
+			c-8.35,0-15.19,4.9-15.19,14.55c0,9.72,6.84,14.47,15.19,14.47C115.39,319.33,122.3,314.58,122.3,304.86z"/>
+		<path class="st2" d="M84.82,378.04h2.81c1.94,0,2.66-0.79,2.66-2.88v-23.4c0-1.66-0.86-2.38-2.66-2.38h-2.81V337.5h44.5v19.44
+			h-10.01v-7.56h-18.87v9.29h15.41v9.22h-15.41v7.27c0,2.09,0.65,2.88,2.52,2.88h5.9v11.67H84.82V378.04z"/>
+	</g>
+</g>
+</svg>

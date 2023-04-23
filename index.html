@@ -51,19 +51,25 @@
         #F7E0B2 30%
     );
     z-index: 99;
-    padding-top: 40%;
-    padding-bottom: 40%;
+   
   }
 
   #after-splash {
     display: none;
   }
+
+  #vertical {
+    height: 100%;
+    padding-top: 40%;
+    padding-bottom: 40%;
+  }
+
 </style>
 
 <body id="body">
   
   <div id="splash">
-    <img src="assets/logo_vertical.png">
+    <img id="vertical" src="assets/spoof_vertical.svg">
   </div>
 
    <div class="container" id="after-splash">
@@ -96,7 +102,7 @@
       document.getElementById("splash").style.display = "none";
       document.getElementById("after-splash").style.display = "block";
       document.getElementById("body").classList.add("yellow");
-    }, 2000);
+    }, 3000);
     
   </script>
 </body>
