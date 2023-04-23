@@ -176,10 +176,6 @@ button.help {
   display: block;
 }
 
-#btn_help_blue {
-  background-color: #61C9C8;
-}
-
 #btn_help_red {
   background-color: #ED7657;
 }
@@ -536,7 +532,7 @@ main {
   margin: 0;
 }
 
-.fa-solid {
+.fa-location-arrow {
   position: absolute;
   top: -8%;
   left: 43.7%;
