@@ -1,4 +1,5 @@
 /*--------------- Setup - Firebase (Malorie with some help from Dave)-------------*/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
@@ -14,7 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-/*--------------- Write Data - Player -------------*/
+/*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
+
 function writeSpinData(value, index) {
   const db = getDatabase();
   set(ref(db, 'spinData/' + 1), {
@@ -29,12 +31,15 @@ function writeGameOn(value) {
       value
     });
 }
+
 /* --------------- Spin Wheel (Dave) --------------------- */
+
 const spinWheel = document.getElementById("spinWheel");
 const spinBtn = document.getElementById("spin_btn");
 const text = document.getElementById("text");
 
-/* --------------- Minimum And Maximum Angle For A value (Dave) --------------------- */
+/* --------------- Minimum And Maximum Angle For A Value (Dave) --------------------- */
+
 const spinValues = {
   prompt: [
     { minDegree: 61, maxDegree: 90, value: "Brushing your teeth" },
@@ -53,7 +58,9 @@ const spinValues = {
 }
 
 /* --------------- Size Of Each Piece (Dave) --------------------- */
+
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+
 /* --------------- Background Colors (Dave) --------------------- */
 
 var spinColors = [
@@ -61,6 +68,7 @@ var spinColors = [
 ];
 
 /* --------------- Chart (Dave) --------------------- */
+
 let spinChart = new Chart(spinWheel, {
   plugins: [ChartDataLabels],
   type: "pie",
@@ -69,6 +77,7 @@ let spinChart = new Chart(spinWheel, {
     datasets: [
       {
         backgroundColor: spinColors,
+        borderColor: "#FBF9ED",
         data: size,
       },
     ],
@@ -76,6 +85,7 @@ let spinChart = new Chart(spinWheel, {
   options: {
     responsive: true,
     animation: { duration: 0 },
+    hover: {mode: null},
     plugins: {
       tooltip: false,
       legend: {
@@ -86,31 +96,66 @@ let spinChart = new Chart(spinWheel, {
         color: "#ffffff",
         formatter: (_, context) => context.chart.data.labels[context.dataIndex],
         font: { size: 24 },
+        display: false,
       },
     },
   },
 });
-/* --------------- Display Value Based On The Angle (Dave) --------------------- */
+
+/* --------------- Display Value Based On Angle (Dave) --------------------- */
+/* --------------- Change to Prompt (Malorie) --------------------- */
+
+
+const wheelActive = document.querySelector('#spin-page');
+const promptActive = document.querySelector('#prompt-page')
+const promptSpot = document.querySelector('#prompt');
+
 const generateValue = (angleValue) => {
   let j = 0;
   for (let i of spinValues.prompt) {
     
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      text.innerHTML = `<p>Act as if "${i.value}" </p>`;
-      writeSpinData(i.value, j)
+      wheelActive.classList.add("hide");
+      promptActive.classList.remove("hide");
+      promptSpot.innerHTML = `<p class="prompt">${i.value}</p>`;
+      writeSpinData(i.value, j);
+      
+/* --------------- Start Timer (Dave?) --------------------- */
+      
+      const timer = document.getElementById("timer");
+        let time = 180;
+
+        function updateTimer() {
+          let minutes = Math.floor(time / 60);
+          let seconds = time % 60;
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          timer.innerHTML = `${minutes}:${seconds}`;
+
+          if (time === 0) {
+            clearInterval(countdownInterval);
+          }
+
+          time--;
+        }
+
+        let countdownInterval = setInterval(updateTimer, 1000);
       spinBtn.disabled = false;
       break;
     }
     j++
   }
 };
+
 /* --------------- Spinning Code (Dave)--------------------- */
+
 let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
   writeGameOn(true);
   spinBtn.disabled = true;
-  text.innerHTML = `<p>Get ready to Spoof!</p>`;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
   let rotationInterval = window.setInterval(() => {
     spinChart.options.rotation = spinChart.options.rotation + resultValue;
@@ -128,10 +173,14 @@ spinBtn.addEventListener("click", () => {
   }, 10);
 });
 
-/* --------------- No Scroll --------------------- */
+/* --------------- No Scroll (Malorie) --------------------- */
+
 function disable_scroll_mobile(){
   document.addEventListener('touchmove', preventDefault, false);
 }
 function enable_scroll_mobile(){
   document.removeEventListener('touchmove', preventDefault, false);
 }
+
+disable_scroll_mobile();
+enable_scroll_mobile();

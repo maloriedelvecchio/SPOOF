@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-/*--------------- Read Data - Guesser -------------*/
+/*--------------- Read Data - Guesser (Dave & Malorie w/Help) -------------*/
 
 async function readSpinData(){
   const dbRef = ref(getDatabase());
@@ -32,7 +32,7 @@ async function readSpinData(){
   return response;
 }
 
-/*--------------- Possible Answers -------------*/
+/*--------------- Possible Answers (Dave & Malorie) -------------*/
 
 let possibleAnswers = [ 
   ["You are brushing your teeth",   "You're brushing your teeth",   "Brushing teeth",   "Cleaning your teeth",   "Toothbrush"],   
@@ -49,6 +49,8 @@ let possibleAnswers = [
   ["You are rock climbing", "You're rock climbing", "Rock climbing", "Climbing"]
 ];
 
+/*-------------------- Win/Lose (Malorie w/Help) -----------------*/
+
   document.getElementById("guessForm").addEventListener("submit", function(e){
     e.preventDefault();
     let x = document.forms["guessForm"]["text-input"].value;   //  let x be the text inputted
@@ -57,24 +59,63 @@ let possibleAnswers = [
       console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
 
       if(possibleAnswers[response.index].includes(x)){      
-        window.location.href = "guesser_winner.html"
-        // alert("Correct");                                     //  if text inputted is equal to the value of the the PROMPT           
+        window.location.href = "guesser_winner.html";
         return true;
       }
+        
       else {
-        // alert("NotCorrect");
         const wrongGuess = document.querySelector('#wrong');
         let li = document.createElement('li');
         li.className = "list-group-item";
         li.innerHTML = '<p class="score">' + x + '</p>';
         wrongGuess.appendChild(li);
         wrongGuess.classList.remove("hide");
-      }
-    })
+        document.getElementById("guessForm").reset();
+      };
+    });
   });
 
-/* with icon
+  /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
 
-  li.innerHTML = '<div id="icon"><p class="score"><i class="fa-solid fa-circle-xmark" id="x-icon" style="color: #ed7657;"></i>' + '&nbsp;&nbsp;' + x + '</p></div>';
+async function readGameOn(){
+  const dbRef = ref(getDatabase());
+  const response = await get(child(dbRef, `gameOn/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());              // writes prompt as value 
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  return response;
+}
 
-  */
+/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
+
+function checkGameState(){
+  readGameOn().then(function (response){                                                     
+    console.log(response);
+
+    if(response.value){  
+      document.getElementById("text-input").disabled = false;
+      document.getElementById("text-submit").disabled = false;
+    }
+    else {
+      document.getElementById("text-input").disabled = true;
+      document.getElementById("text-submit").disabled = true;
+    }
+  })
+}
+
+/*----------------- General (Malorie w/Help) ------------------*/
+
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+  setInterval(checkGameState, 1000); /// this one calls the function every second
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
