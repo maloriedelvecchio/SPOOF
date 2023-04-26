@@ -78,8 +78,28 @@
   </div>
  
   <script src="script/script.js" type="module"></script>
-  <script src="timer.js" type="module"></script>
   <script>
+    const timer = document.getElementById("timer");
+    let time = 180;
+
+    function updateTimer() {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      timer.innerHTML = `${minutes}:${seconds}`;
+
+      if (time === 0) {
+        clearInterval(countdownInterval);
+      }
+
+      time--;
+    }
+
+let countdownInterval = setInterval(updateTimer, 1000);
+
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
     });
