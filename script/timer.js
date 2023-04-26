@@ -1,5 +1,3 @@
-/* this is a test timer that will be linked to all pages that require a timer, I intend to add the timer data to the firebase to sync the data accross multiple pages.*/ 
-
 /*--------------- Setup - Firebase (Malorie & Dave) -------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -17,7 +15,31 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-/*---------------------------------Timer (Dave)------------------------------------*/ 
+
+/*-----------Timer - Original ----------*/
+
+const timer = document.getElementById("timer");
+let time = 180;
+
+function updateTimer() {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  timer.innerHTML = `${minutes}:${seconds}`;
+
+  if (time === 0) {
+    clearInterval(countdownInterval);
+  }
+
+  time--;
+}
+
+let countdownInterval = setInterval(updateTimer, 1000);
+
+/*---------------------------------Timer (Dave)------------------------------------
     var countdownTime = 180;
     
     var countdown = setInterval(function() {
@@ -38,4 +60,4 @@ const database = getDatabase(app);
     // Display a message when the countdown is over
     document.getElementById('countdown').textContent = 'Time\'s up!';
     }
-    }, 1000); 
+    }, 1000); */

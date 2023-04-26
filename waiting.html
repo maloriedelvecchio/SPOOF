@@ -47,7 +47,7 @@
       </div>
     </header>
     <main>
-      <div class="timer" id="timer" style="margin-bottom: 16px;">3:00</div>
+      <div class="timer" id="timer"></div>
     </main>
   
     <button class="help" data-toggle="popover" title="Please bear with us..." data-content="Once a game has started, you cannot join until the next round." data-placement="bottom">
@@ -68,28 +68,9 @@
     </footer>
   </div>
   
+  <script src="script/timer.js" type="module"></script>
+
   <script>
-    const timer = document.getElementById("timer");
-    let time = 180;
-
-    function updateTimer() {
-      let minutes = Math.floor(time / 60);
-      let seconds = time % 60;
-
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      timer.innerHTML = `${minutes}:${seconds}`;
-
-      if (time === 0) {
-        clearInterval(countdownInterval);
-      }
-
-      time--;
-    }
-
-    let countdownInterval = setInterval(updateTimer, 1000);
-
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
     });
