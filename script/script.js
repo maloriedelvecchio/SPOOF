@@ -32,6 +32,22 @@ function writeGameOn(value) {
     });
 }
 
+function writeTimeStamp(value) {
+  const db = getDatabase();
+  set(ref(db, 'timeStamp/'), {
+    value
+  });
+}
+/*
+   // Get a reference to the Firebase Realtime Database
+   const databaseRef = firebase.database().ref();
+
+   // Get the current timestamp
+  const timestamp = Date.now();
+ 
+   // Store the timestamp in the Firebase Realtime Database
+  databaseRef.child('timestamp').set(timestamp);
+
 /* --------------- Spin Wheel (Dave) --------------------- */
 
 const spinWheel = document.getElementById("spinWheel");
@@ -118,30 +134,7 @@ const generateValue = (angleValue) => {
       wheelActive.classList.add("hide");
       promptActive.classList.remove("hide");
       promptSpot.innerHTML = `<p class="prompt">${i.value}</p>`;
-      writeSpinData(i.value, j);
-      
-/* --------------- Start Timer (Dave?) --------------------- */
-      
-      const timer = document.getElementById("timer");
-        let time = 180;
-
-        function updateTimer() {
-          let minutes = Math.floor(time / 60);
-          let seconds = time % 60;
-
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-
-          timer.innerHTML = `${minutes}:${seconds}`;
-
-          if (time === 0) {
-            clearInterval(countdownInterval);
-          }
-
-          time--;
-        }
-
-        let countdownInterval = setInterval(updateTimer, 1000);
+      writeSpinData(i.value, j);      
       spinBtn.disabled = false;
       break;
     }
@@ -155,6 +148,7 @@ let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
   writeGameOn(true);
+  writeTimeStamp(Date.now());
   spinBtn.disabled = true;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
   let rotationInterval = window.setInterval(() => {
@@ -184,3 +178,4 @@ function enable_scroll_mobile(){
 
 disable_scroll_mobile();
 enable_scroll_mobile();
+

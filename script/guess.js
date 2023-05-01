@@ -32,6 +32,21 @@ async function readSpinData(){
   return response;
 }
 
+async function readTimeStamp(){
+  const dbRef = ref(getDatabase());
+  const storedTime = await get(child(dbRef, `timeStamp/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());              // writes prompt as value -------// object(i) is "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  return storedTime;
+}
+
 /*--------------- Possible Answers (Dave & Malorie) -------------*/
 
 let possibleAnswers = [ 
@@ -94,10 +109,43 @@ async function readGameOn(){
 
 /*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
 
+function checkTimerState() {
+  readGameOn().then(function (response) {
+    console.log(response);
+    if (response.value) {
+      readTimeStamp().then(function (storedTime) {
+        console.log(storedTime);
+        const difference = Date.now() - storedTime.value;
+        const elapsed = Math.floor(difference / 1000);
+        let time = 180 - elapsed;
+        console.log(time);
+        
+        function updateTimer() {
+          let minutes = Math.floor(time / 60);
+          let seconds = time % 60;
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          const timer = document.getElementById("timer");
+          timer.innerHTML = `${minutes}:${seconds}`;
+
+          if (time === 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "guesser_loser.html";
+          }
+
+          time--;
+        }
+        let countdownInterval = setInterval(updateTimer, 1000);
+      });
+    }
+  })
+};
+
 function checkGameState(){
   readGameOn().then(function (response){                                                     
     console.log(response);
-
     if(response.value){  
       document.getElementById("text-input").disabled = false;
       document.getElementById("text-submit").disabled = false;
@@ -114,8 +162,34 @@ function checkGameState(){
 $(document).ready(function(){
   $('[data-toggle="popover"]').popover();
   setInterval(checkGameState, 1000); /// this one calls the function every second
+  checkTimerState();
 });
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+/*--------GUESSER - TIMER--------
+
+// Get a reference to the Firebase Realtime Database
+const databaseRef = firebase.database().ref();
+
+// Get the stored timestamp from the Firebase Realtime Database
+databaseRef.child('timestamp').once('value', snapshot => {
+  const storedTimestamp = snapshot.val();
+
+  // Calculate the difference between the stored timestamp and the current time
+  /*const difference = Date.now() - storedTimestamp;
+
+  // Create a timer function to compare the current time with the stored timestamp
+  
+  const timer = setInterval(() => {
+    const elapsed = Date.now() - storedTimestamp - difference;
+    console.log(`Elapsed time: ${elapsed} milliseconds`);
+  }, 1000);
+});*/
+
+
+
+
+
