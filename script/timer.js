@@ -76,7 +76,7 @@ async function readTimeStamp(){
   return storedTime;
 }
 
-/*--------------- Calculate Time Remaining (Malorie) -------------*/
+/*--------------- Calculate Time Remaining (Malorie) -- FOR WAITING PAGE -------------*/
 
 function checkTimerState() {
   readGameOn().then(function (response) {
@@ -101,6 +101,7 @@ function checkTimerState() {
 
           if (time === 0) {
             clearInterval(countdownInterval);
+            window.location.href = "role.html";
           }
 
           time--;
