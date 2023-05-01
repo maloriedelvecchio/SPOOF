@@ -238,8 +238,6 @@ input:focus {
   background-color: #FBF9ED;
 }
 
-
-
 #text-submit {
   font-family: 'Trilby', 'Zilla Slab', serif;
   font-weight: 500;
@@ -252,6 +250,13 @@ input:focus {
 
 /*-------------- TEXT (Malorie) --------------*/
 
+p {
+  font-size: 1em;
+}
+
+p.about {
+  margin-bottom: 0;
+}
 
 h1, h2, h3, h4 {
   font-family: 'Trilby', 'Zilla Slab', serif;
@@ -335,6 +340,14 @@ p.score {
   margin-bottom: 0;
 }
 
+a { 
+  font-weight: 600;
+  color: #ED7657;
+}
+
+.para {
+  padding: 1rem;
+}
 
 /*-------------- OTHER (Malorie) --------------*/
 
@@ -374,8 +387,16 @@ ol {
   margin-bottom: 0;
 }
 
-li {
+li.instructions {
   display: inline-block;
+}
+
+
+img.pics {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
 
 .list-group-horizontal-small {

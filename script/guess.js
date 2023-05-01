@@ -132,6 +132,7 @@ function checkTimerState() {
 
           if (time === 0) {
             clearInterval(countdownInterval);
+            window.location.href = "guesser_loser.html";
           }
 
           time--;
