@@ -34,25 +34,20 @@ async function readGameOn(){
 
 /*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
 
+const startButton = document.getElementById('btn_brown');
+  startButton.addEventListener('click', function() {
+    checkGameState();
+  });
+
 function checkGameState(){
   readGameOn().then(function (response){                                                     
     console.log(response);
 
-    if(response.value){  
-     // btn_role_b.style.pointerEvents = 'none';
-    //  btn_role_b.style.cursor = 'default';    
-      btn_role_a.style.pointerEvents = 'none';
-      btn_role_a.style.cursor = 'default';
-      btn_role_a.classList.remove("enabled");
-      btn_role_a.classList.add("disabled");
+    if(response.value){         // game IS on
+      window.location.href='waiting.html';
     }
-    else {
-   //   btn_role_b.style.pointerEvents = 'auto';
-   //   btn_role_b.style.cursor = 'pointer';    
-      btn_role_a.style.pointerEvents = 'auto';
-      btn_role_a.style.cursor = 'pointer';
-      btn_role_a.classList.remove("disabled");
-      btn_role_a.classList.add("enabled");
+    else {                      // game IS NOT on
+      window.location.href='role.html';
     }
   })
 }
@@ -61,7 +56,6 @@ function checkGameState(){
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
-    setInterval(checkGameState, 1000); /// this one calls the function every second
   });
   
   $(function () {
