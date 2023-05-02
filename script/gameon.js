@@ -34,7 +34,7 @@ async function readGameOn(){
 
 /*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
 
-const startButton = document.getElementById('startButton');
+const startButton = document.getElementById('btn_brown');
   startButton.addEventListener('click', function() {
     checkGameState();
   });
@@ -44,7 +44,7 @@ function checkGameState(){
     console.log(response);
 
     if(response.value){         // game IS on
-    window.location.href='waiting.html';
+      window.location.href='waiting.html';
     }
     else {                      // game IS NOT on
       window.location.href='role.html';

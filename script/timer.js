@@ -33,7 +33,7 @@ async function readGameOn(){
   return response;
 }
 
-/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
+/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------
 
 function checkGameState(){
   readGameOn().then(function (response){                                                     
@@ -120,9 +120,6 @@ $(document).ready(function(){
   });
   checkTimerState();
 });
-
-
-
 
 /*-----------Timer - Original ----------
 

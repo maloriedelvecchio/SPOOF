@@ -357,6 +357,11 @@ img {
   max-width: 75%;
 }
 
+#drama-face {
+  max-width: 75%;
+  padding: 2rem;
+}
+
 video {
   display: block;
   margin: 0 auto;
