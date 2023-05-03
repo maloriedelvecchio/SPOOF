@@ -468,12 +468,12 @@ img.pics {
 
 .popover-header {
   background-color:#F9EACA;
-  border-bottom: 1px solid #451F27;
+  border-bottom: 1px solid #F7E0B2;
 }
 
 .popover {
   background-color: #FBF9ED;
-  border: 1px solid #451F27;
+  border: 1px solid #F7E0B2;
 }
 
 .bs-popover-auto[x-placement^=bottom]>.arrow::after, .bs-popover-bottom>.arrow::after {
@@ -485,7 +485,7 @@ img.pics {
 }
 
 .bs-popover-auto[x-placement^=bottom]>.arrow::before, .bs-popover-bottom>.arrow::before {
-  border-bottom-color: #451F27;
+  border-bottom-color: #F7E0B2;
 }
 
 #modalPage {
