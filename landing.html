@@ -1,5 +1,3 @@
-<!-- --------------- Splash Screen (Malorie) --------------------- -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,51 +17,46 @@
 </head>
 
 <style>
-  .mix {
+  .yellow {
     background: repeating-linear-gradient(
       to right,
-      #86D4D3 0%,
-      #86D4D3 15%,
+      #F7E0B2 0%,
       #F7E0B2 15%,
-      #F7E0B2 30%
+      #F9EACA 15%,
+      #F9EACA 30%
     );
   }
-
-  #splash {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: repeating-linear-gradient(
-      to right,
-        #86D4D3 0%,
-        #86D4D3 15%,
-        #F7E0B2 15%,
-        #F7E0B2 30%
-    );
-    z-index: 99;
-  }
-
-  #vertical {
-    height: 100%;
-    padding-top: 40%;
-    padding-bottom: 40%;
-  }
-
 </style>
 
-<body class="mix">
+<body class="yellow">
+  
+   <div class="container">
+    <header class="home-logo">
+      <img src="assets/logo_horizontal.png" id="logo" alt="Spoof logo">
+    </header>
+  
+    <div class="row"> 
+      <h2>How to play</h2>
+    </div>
+  
+    <div class="iframe-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/eXSRDtK-SNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  
+    <div class="row">
+      <h4>Ready to get started?!</h4>
+    </div>
+  
+    <footer>
+      <div class="row">
+        <button id="btn_brown" class="main">LET'S DO THIS!</button>
+      </div>
+      <div class="row" id="about-us">
+        <p style="padding-top: 30px;">or, <a href="about_us.html">click here</a> to learn more about us!</p>
+      </div>
 
-  <div id="splash">
-    <img id="vertical" src="assets/spoof_vertical.svg">
-  </div>
-
-  <script>
-    setTimeout(function() {
-      window.location.replace("landing.html");
-    }, 3000);
-  </script>
-
+    </footer>
+  </div> 
+  <script src="script/gameon.js" type="module"></script>
 </body>
 </html>
