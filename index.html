@@ -18,43 +18,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 
-<style>
-  .mix {
-    background: repeating-linear-gradient(
-      to right,
-      #86D4D3 0%,
-      #86D4D3 15%,
-      #F7E0B2 15%,
-      #F7E0B2 30%
-    );
-  }
-
-  #splash {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: repeating-linear-gradient(
-      to right,
-        #86D4D3 0%,
-        #86D4D3 15%,
-        #F7E0B2 15%,
-        #F7E0B2 30%
-    );
-    z-index: 99;
-  }
-
-  #vertical {
-    height: 100%;
-    padding-top: 40%;
-    padding-bottom: 40%;
-  }
-
-</style>
-
-<body class="mix">
-
+<body id="mix">
   <div id="splash">
     <img id="vertical" src="assets/spoof_vertical.svg">
   </div>
@@ -64,6 +28,6 @@
       window.location.replace("landing.html");
     }, 3000);
   </script>
-
 </body>
+
 </html>

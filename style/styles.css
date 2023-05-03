@@ -434,6 +434,11 @@ li.instructions {
   display: inline-block;
 }
 
+#vertical {
+  height: 100%;
+  padding-top: 40%;
+  padding-bottom: 40%;
+}
 
 img.pics {
   border-radius: 50%;
