@@ -440,6 +440,15 @@ li.instructions {
   padding-bottom: 40%;
 }
 
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+
 img.pics {
   border-radius: 50%;
   object-fit: cover;
