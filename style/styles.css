@@ -107,7 +107,7 @@ button.main:not(:active):after {
 }
 
 /* fixes initial animation run, without user input, on page load */
-button:after {
+button.main:after {
   visibility: hidden;
 }
 
@@ -131,7 +131,6 @@ button.main {
 #btn_brown {
   background-color: #451F27;
 }
-
 
 #btn_red {
   background-color: #ED7657;
@@ -204,6 +203,39 @@ button.nav-exit {
   background-color: #61C9C8;
 }
 
+.btn-secondary, .btn-secondary:hover {
+  background-color: #FBF9ED;
+  color: #451F27;
+  border-radius: 15px;
+  border: 0;
+  font-family: 'futura-pt', 'jost', sans-serif;
+}
+
+.btn-primary, .btn-primary:hover {
+  background-color: #ED7657;
+  color: #451F27;
+  border-radius: 15px;
+  border: 0;
+  font-family: 'futura-pt', 'jost', sans-serif;
+}
+
+.modal-body {
+  border-top: 1px solid #451F27;
+  border-bottom: 1px solid #451F27;
+}
+
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.modal-content {
+  background-color: #F7E0B2;
+  color:#451F27;
+}
 
 
 /*--------------  GUESS FORM (Malorie) --------------*/
@@ -258,7 +290,7 @@ p.about {
   margin-bottom: 0;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h6 {
   font-family: 'Trilby', 'Zilla Slab', serif;
   text-align: center;
   font-weight: 600;
@@ -348,6 +380,12 @@ a {
 .para {
   padding: 1rem;
 }
+
+h6 {
+  font-size: 2em;
+  padding: 0;
+}
+
 
 /*-------------- OTHER (Malorie) --------------*/
 
@@ -450,7 +488,7 @@ img.pics {
   border-bottom-color: #451F27;
 }
 
-.modal {
+#modalPage {
   display: block;
   width: 100%;
   height: 100%;

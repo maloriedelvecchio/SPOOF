@@ -38,15 +38,6 @@ function writeTimeStamp(value) {
     value
   });
 }
-/*
-   // Get a reference to the Firebase Realtime Database
-   const databaseRef = firebase.database().ref();
-
-   // Get the current timestamp
-  const timestamp = Date.now();
- 
-   // Store the timestamp in the Firebase Realtime Database
-  databaseRef.child('timestamp').set(timestamp);
 
 /* --------------- Spin Wheel (Dave) --------------------- */
 

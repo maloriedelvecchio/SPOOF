@@ -34,7 +34,7 @@
 
     <section id="spin-page">
       <nav>
-        <button class="nav-exit" id="btn_nav_red" alt="Exit">
+        <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
           <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
         </button>
       </nav>
@@ -53,11 +53,11 @@
     </section>
     
     <section id="prompt-page" class="hide">
-        <div class="modal">
+        <div class="modal" id="modalPage">
             <nav>
-                <button class="nav-exit" id="btn_nav_red" alt="Exit">
-                  <img src="assets/icon_exit.png">
-                </button>
+              <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
+                <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
+              </button>
             </nav>
             
             <div class="row">
@@ -75,6 +75,31 @@
             </div>
         </div>
     </section>
+
+
+    <div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h6>Are you sure?</h6>
+          </div>
+
+          <div class="modal-body">
+            This will end the current game in play. 
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue playing</button>
+            <button type="button" class="btn btn-primary">Quit now</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
   </div>
  
   <script src="script/script.js" type="module"></script>
