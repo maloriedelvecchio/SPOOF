@@ -15,6 +15,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+/*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
+
+function writeGameOn(value) {
+  const db = getDatabase();
+  set(ref(db, 'gameOn/'), {
+    value
+  });
+}
 
 /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
 
@@ -75,6 +83,7 @@ function checkTimerState() {
 
           if (time === 0) {
             clearInterval(countdownInterval);
+            writeGameOn(false);
             window.location.href = "role.html";
           }
 

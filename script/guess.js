@@ -15,6 +15,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+/*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
+
+function writeGameOn(value) {
+  const db = getDatabase();
+  set(ref(db, 'gameOn/'), {
+    value
+  });
+}
+
 /*--------------- Read Data - Guesser (Dave & Malorie w/Help) -------------*/
 
 async function readSpinData(){
@@ -50,8 +59,8 @@ async function readTimeStamp(){
 /*--------------- Possible Answers (Dave & Malorie) -------------*/
 
 let possibleAnswers = [ 
-  ["You are brushing your teeth",   "You're brushing your teeth",   "Brushing teeth",   "Cleaning your teeth",   "Toothbrush"],   
-  ["You are doing a magic trick",   "You're doing a magic trick",   "Doing a magic trick",   "Performing a magic trick",   "Magic",   "Casting a spell"],   
+  ["You are brushing your teeth",   "You're brushing your teeth",   "Brushing teeth",  "Brushing your teeth",  "Cleaning your teeth",   "Toothbrush"],   
+  ["You are doing a magic trick",   "You're doing a magic trick",   "Doing a magic trick",  "Doing magic",  "Performing a magic trick",   "Magic",   "Casting a spell"],   
   ["You are playing the piano",   "You're playing the piano",   "Playing piano",   "Piano",   "Keyboard"],   
   ["You are playing basketball",   "You're playing basketball",   "Playing basketball",   "Basketball"],   
   ["You are taking a selfie",   "You're taking a selfie",   "Taking selfie",   "Selfie",   "Photo"],   
@@ -75,6 +84,7 @@ let possibleAnswers = [
 
       if(possibleAnswers[response.index].includes(x)){      
         window.location.href = "guesser_winner.html";
+        writeGameOn(false);
         return true;
       }
         

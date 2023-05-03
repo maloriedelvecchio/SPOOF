@@ -1,7 +1,7 @@
 /*--------------- Setup - Firebase (Malorie with some help from Dave)-------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyAS_xn4bBKBHKGKN42sMmFLwiN7Cs2B0nU",
   authDomain: "spoof-5e4ba.firebaseapp.com",
@@ -14,6 +14,39 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
+/*-------Read if GameOn--------*/
+
+async function readGameOn(){
+  const dbRef = ref(getDatabase());
+  const response = await get(child(dbRef, `gameOn/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());              // writes prompt as value 
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  return response;
+}
+
+ /* --------------- Check if Game has been Won (Malorie) --------------------- */
+
+ function checkGameWon(){
+  readGameOn().then(function (response){                                                     
+    console.log(response);
+
+    if(response.value === false){         // game IS NOT on
+      window.location.href='actor_winner.html';
+    }
+  })
+}
+
+$(document).ready(function(){
+  setInterval(checkGameWon, 1000); 
+});
 
 /*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
 
@@ -169,4 +202,5 @@ function enable_scroll_mobile(){
 
 disable_scroll_mobile();
 enable_scroll_mobile();
+
 
