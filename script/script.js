@@ -32,22 +32,6 @@ async function readGameOn(){
   return response;
 }
 
- /* --------------- Check if Game has been Won (Malorie) --------------------- */
-
- function checkGameWon(){
-  readGameOn().then(function (response){                                                     
-    console.log(response);
-
-    if(response.value === false){         // game IS NOT on
-      window.location.href='actor_winner.html';
-    }
-  })
-}
-
-$(document).ready(function(){
-  setInterval(checkGameWon, 1000); 
-});
-
 /*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
 
 function writeSpinData(value, index) {
@@ -165,6 +149,26 @@ const generateValue = (angleValue) => {
     j++
   }
 };
+
+/* --------------- Check if Game has been Won (Malorie) --------------------- */
+
+function checkGameWon(){
+  if (promptActive.classList.contains('hide')) {
+
+  }
+  
+  else {
+    readGameOn().then(function (response){
+      if(response.value === false){
+        window.location.href='actor_winner.html';
+      }
+    });
+  }
+};
+
+$(document).ready(function(){
+  setInterval(checkGameWon, 1000); 
+});
 
 /* --------------- Spinning Code (Dave)--------------------- */
 
