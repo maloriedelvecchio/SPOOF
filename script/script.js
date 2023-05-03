@@ -1,7 +1,7 @@
 /*--------------- Setup - Firebase (Malorie with some help from Dave)-------------*/
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyAS_xn4bBKBHKGKN42sMmFLwiN7Cs2B0nU",
   authDomain: "spoof-5e4ba.firebaseapp.com",
@@ -14,6 +14,30 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
+/*-------Read if GameOn--------*/
+
+async function readGameOn(){
+  const dbRef = ref(getDatabase());
+  const response = await get(child(dbRef, `gameOn/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());              // writes prompt as value 
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  return response;
+}
+
+/*-------Cancel Game--------*/
+
+const cancelButton = document.getElementById('cancel');
+  cancelButton.addEventListener('click', function() {
+    writeGameOn(false);
+  });
 
 /*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
 
@@ -38,15 +62,6 @@ function writeTimeStamp(value) {
     value
   });
 }
-/*
-   // Get a reference to the Firebase Realtime Database
-   const databaseRef = firebase.database().ref();
-
-   // Get the current timestamp
-  const timestamp = Date.now();
- 
-   // Store the timestamp in the Firebase Realtime Database
-  databaseRef.child('timestamp').set(timestamp);
 
 /* --------------- Spin Wheel (Dave) --------------------- */
 
@@ -142,6 +157,26 @@ const generateValue = (angleValue) => {
   }
 };
 
+/* --------------- Check if Game has been Won (Malorie) --------------------- */
+
+function checkGameWon(){
+  if (promptActive.classList.contains('hide')) {
+
+  }
+  
+  else {
+    readGameOn().then(function (response){
+      if(response.value === false){
+        window.location.href='actor_winner.html';
+      }
+    });
+  }
+};
+
+$(document).ready(function(){
+  setInterval(checkGameWon, 1000); 
+});
+
 /* --------------- Spinning Code (Dave)--------------------- */
 
 let count = 0;
@@ -178,4 +213,5 @@ function enable_scroll_mobile(){
 
 disable_scroll_mobile();
 enable_scroll_mobile();
+
 

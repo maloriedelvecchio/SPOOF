@@ -15,6 +15,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+/*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
+
+function writeGameOn(value) {
+  const db = getDatabase();
+  set(ref(db, 'gameOn/'), {
+    value
+  });
+}
 
 /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
 
@@ -32,32 +40,6 @@ async function readGameOn(){
   });
   return response;
 }
-
-/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------
-
-function checkGameState(){
-  readGameOn().then(function (response){                                                     
-    console.log(response);
-
-    if(response.value){  
-     // btn_role_b.style.pointerEvents = 'none';
-    //  btn_role_b.style.cursor = 'default';    
-      btn_role_a.style.pointerEvents = 'none';
-      btn_role_a.style.cursor = 'default';
-      btn_role_a.classList.remove("enabled");
-      btn_role_a.classList.add("disabled");
-    }
-    else {
-   //   btn_role_b.style.pointerEvents = 'auto';
-   //   btn_role_b.style.cursor = 'pointer';    
-      btn_role_a.style.pointerEvents = 'auto';
-      btn_role_a.style.cursor = 'pointer';
-      btn_role_a.classList.remove("disabled");
-      btn_role_a.classList.add("enabled");
-    }
-  })
-}
-
 
 /*--------------- Read Timestamp from Actor (Malorie) -------------*/
 
@@ -101,6 +83,7 @@ function checkTimerState() {
 
           if (time === 0) {
             clearInterval(countdownInterval);
+            writeGameOn(false);
             window.location.href = "role.html";
           }
 
@@ -120,49 +103,3 @@ $(document).ready(function(){
   });
   checkTimerState();
 });
-
-/*-----------Timer - Original ----------
-
-const timer = document.getElementById("timer");
-let time = 180;
-
-function updateTimer() {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
-
-  timer.innerHTML = `${minutes}:${seconds}`;
-
-  if (time === 0) {
-    clearInterval(countdownInterval);
-  }
-
-  time--;
-}
-
-let countdownInterval = setInterval(updateTimer, 1000);
-
-/*---------------------------------Timer (Dave)------------------------------------
-    var countdownTime = 180;
-    
-    var countdown = setInterval(function() {
-    var minutes = Math.floor(countdownTime / 60);
-    var seconds = countdownTime % 60;
-      
-    var formattedMinutes = String(minutes).padStart(2, '0');
-    var formattedSeconds = String(seconds).padStart(2, '0');
-      
-    document.getElementById('countdown').textContent = formattedMinutes + ':' + formattedSeconds;
-      
-    countdownTime--;
-      
-    if (countdownTime < 0) {
-    // Stop the countdown
-    clearInterval(countdown);
-        
-    // Display a message when the countdown is over
-    document.getElementById('countdown').textContent = 'Time\'s up!';
-    }
-    }, 1000); */

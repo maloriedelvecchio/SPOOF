@@ -8,7 +8,7 @@
     <meta http-equiv='pragma' content='no-cache'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Actor - Spin Wheel</title>
+    <title>Actor Page</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style/styles.css">
@@ -33,14 +33,16 @@
   <div class="container">
 
     <section id="spin-page">
+
       <nav>
-        <button class="nav-exit" id="btn_nav_red" alt="Exit">
-          <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
+        <button onclick="window.location.href='actor_instruction.html';" class="nav-back" id="btn_nav_blue" alt="Go Back">
+          <i class="fa-solid fa-chevron-left fa-2xl" style="color: #fbf9ed;"></i>
         </button>
       </nav>
+      
      
       <header>
-        <h2 id="h2-whitebg">Spin the wheel to get your prompt</h2>
+        <h2 id="h2-whitebg">Spin the wheel when your guessers are ready</h2>
       </header>
   
       <div class="container" id="wheel-container">
@@ -53,13 +55,13 @@
     </section>
     
     <section id="prompt-page" class="hide">
-        <div class="modal">
-            <nav>
-                <button class="nav-exit" id="btn_nav_red" alt="Exit">
-                  <img src="assets/icon_exit.png">
-                </button>
-            </nav>
-            
+        <div class="modal" id="modalPage">
+          <nav>
+            <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
+              <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
+            </button>
+          </nav>
+          
             <div class="row">
                 <header>
                     <h5>Act as if you are...</h5>
@@ -75,6 +77,31 @@
             </div>
         </div>
     </section>
+
+
+    <div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h6>Are you sure?</h6>
+          </div>
+
+          <div class="modal-body">
+            This will end the current game in play for everyone. 
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue playing</button>
+            <button id="cancel" type="button" class="btn btn-primary" onclick="window.location.href='landing.html';">Quit now</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
   </div>
  
   <script src="script/script.js" type="module"></script>
@@ -108,6 +135,7 @@ let countdownInterval = setInterval(updateTimer, 1000);
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     })
+
   </script>
 
 </body>   
