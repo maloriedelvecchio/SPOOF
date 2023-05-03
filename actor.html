@@ -33,11 +33,13 @@
   <div class="container">
 
     <section id="spin-page">
+
       <nav>
-        <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
-          <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
+        <button onclick="window.location.href='actor_instruction.html';" class="nav-back" id="btn_nav_blue" alt="Go Back">
+          <i class="fa-solid fa-chevron-left fa-2xl" style="color: #fbf9ed;"></i>
         </button>
       </nav>
+      
      
       <header>
         <h2 id="h2-whitebg">Spin the wheel to get your prompt</h2>
@@ -54,12 +56,12 @@
     
     <section id="prompt-page" class="hide">
         <div class="modal" id="modalPage">
-            <nav>
-              <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
-                <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
-              </button>
-            </nav>
-            
+          <nav>
+            <button class="nav-exit" id="btn_nav_red" alt="Exit" data-toggle="modal" data-target="#exitModal">
+              <i class="fa-solid fa-xmark fa-2xl" style="color: #fbf9ed;"></i>
+            </button>
+          </nav>
+          
             <div class="row">
                 <header>
                     <h5>Act as if you are...</h5>
@@ -87,12 +89,12 @@
           </div>
 
           <div class="modal-body">
-            This will end the current game in play. 
+            This will end the current game in play for everyone. 
           </div>
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue playing</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='landing.html';">Quit now</button>
+            <button id="cancel" type="button" class="btn btn-primary" onclick="window.location.href='landing.html';">Quit now</button>
           </div>
 
         </div>

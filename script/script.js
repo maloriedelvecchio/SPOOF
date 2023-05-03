@@ -32,6 +32,13 @@ async function readGameOn(){
   return response;
 }
 
+/*-------Cancel Game--------*/
+
+const cancelButton = document.getElementById('cancel');
+  cancelButton.addEventListener('click', function() {
+    writeGameOn(false);
+  });
+
 /*--------------- Write Data - Player (Dave & Malorie w/Help) -------------*/
 
 function writeSpinData(value, index) {

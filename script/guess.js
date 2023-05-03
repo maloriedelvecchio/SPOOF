@@ -153,16 +153,16 @@ function checkTimerState() {
   })
 };
 
+/*---------------- Response to Cancel by Actor ------------------*/
+
 function checkGameState(){
   readGameOn().then(function (response){                                                     
     console.log(response);
-    if(response.value){  
-      document.getElementById("text-input").disabled = false;
-      document.getElementById("text-submit").disabled = false;
+    if(response.value){       // game IS on
+
     }
-    else {
-      document.getElementById("text-input").disabled = true;
-      document.getElementById("text-submit").disabled = true;
+    else {                    // game IS NOT on
+      window.location.replace("landing.html");
     }
   })
 }
