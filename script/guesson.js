@@ -32,25 +32,22 @@ async function readGameOn(){
   return response;
 }
 
-/*---------------- Response to Game On (Dave & Malorie w/Help) ------------------*/
+/*---------------- Check if wheel is spun and ready to guess ------------------*/
 
-const startButton = document.getElementById('btn_brown');
-  startButton.addEventListener('click', function() {
-    checkGameState();
-  });
-
-function checkGameState(){
+function checkActorReady(){
   readGameOn().then(function (response){                                                     
-    console.log(response);
-
     if(response.value){         // game IS on
-      window.location.href='waiting.html';
+      window.location.replace('guesser.html');
     }
     else {                      // game IS NOT on
-      window.location.href='role.html';
+
     }
   })
 }
+
+$(document).ready(function(){
+  setInterval(checkActorReady, 1000); 
+});
 
 /*----------------- General (Malorie w/Help) ------------------*/
 
