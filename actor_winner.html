@@ -43,5 +43,18 @@
         <button class="main" id="btn_red" onclick="window.location.href='role.html';">PLAY AGAIN</button>
     </footer>
   </div>
+  <script>
+    /* --------------- No Scroll (Malorie) --------------------- */
+
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+
+    function disable_scroll_mobile() {
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    }
+    
+    disable_scroll_mobile();
+  </script>
 </body>
 </html>
