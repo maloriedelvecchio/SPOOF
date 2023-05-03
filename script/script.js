@@ -201,17 +201,3 @@ spinBtn.addEventListener("click", () => {
     }
   }, 10);
 });
-
-/* --------------- No Scroll (Malorie) --------------------- */
-
-function disable_scroll_mobile(){
-  document.addEventListener('touchmove', preventDefault, false);
-}
-function enable_scroll_mobile(){
-  document.removeEventListener('touchmove', preventDefault, false);
-}
-
-disable_scroll_mobile();
-enable_scroll_mobile();
-
-

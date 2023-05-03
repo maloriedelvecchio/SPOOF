@@ -35,18 +35,32 @@
 
       <div class="row">
         <ol>
-          <li class="instructions">Step 1: Look at the actor try to guess what they are acting.</li>
-          <li class="instructions">Step 2: enter as many guesses as you can think of, no asking questions.</li>
-          <li class="instructions">Step 3: Fastest correct guess wins</li>
+          <li class="instructions"><b>Step 1:</b> Watch the actor through the one-way mirror wall.</li><br>
+          <li class="instructions"><b>Step 2:</b> Try to figure out what is being acted out (without talking!)</li><br>
+          <li class="instructions"><b>Step 3:</b> Enter as many guesses as you can think of.</li><br><br>
+          <li class="instructions"><b>How to win?</b>  Be the first to guess correctly within 3 minutes!</li>
         </ol>
       </div>
     </main>
 
     <footer>
-      <button class="main" id="btn_red" onclick="window.location.href='guesser.html';">I'M READY TO START</button>
+      <button class="main" id="btn_red" onclick="window.location.href='guesser_waiting.html';">I'M READY TO START</button>
     </footer>
   
   </div>
+  <script>
+    /* --------------- No Scroll (Malorie) --------------------- */
+
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+
+    function disable_scroll_mobile() {
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    }
+
+    disable_scroll_mobile();
+  </script>
 </body>
 </html>
 
