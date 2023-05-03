@@ -77,12 +77,12 @@ let possibleAnswers = [
 
 document.getElementById("guessForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  let x = document.forms["guessForm"]["text-input"].value;   //  let x be the text inputted
+  let x = document.forms["guessForm"]["text-input"].value.toLowerCase();   //  let x be the text inputted
   readSpinData().then(function (response) {                   //  access db and get value
     console.log(x);                                          //  writes x (user input?) to log
     console.log(response);                                   //  writes PROMPT as value ----- // object (i) and value = "Correct prompt" if correct and {value: 'Correct prompt'} if not correct
 
-    if (possibleAnswers[response.index].includes(x)) {
+    if (possibleAnswers[response.index].some(answer => answer.toLowerCase() === x)) {
       window.location.href = "guesser_winner.html";
       writeGameOn(false);
       return true;
@@ -99,6 +99,31 @@ document.getElementById("guessForm").addEventListener("submit", function (e) {
     };
   });
 });
+
+
+// Get the user's input (example)
+let userInput = "Playing the piano";
+
+// Loop through the possibleAnswers array and check if the user's input matches any of the answers (case-insensitive)
+let isAnswerCorrect = false;
+for (let i = 0; i < possibleAnswers.length; i++) {
+  for (let j = 0; j < possibleAnswers[i].length; j++) {
+    if (userInput.toLowerCase() === possibleAnswers[i][j].toLowerCase()) {
+      isAnswerCorrect = true;
+      break;
+    }
+  }
+  if (isAnswerCorrect) {
+    break;
+  }
+}
+
+if (isAnswerCorrect) {
+  console.log("Correct answer!");
+} else {
+  console.log("Wrong answer!");
+}
+
 
 /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
 
