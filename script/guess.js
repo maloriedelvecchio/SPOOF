@@ -100,31 +100,6 @@ document.getElementById("guessForm").addEventListener("submit", function (e) {
   });
 });
 
-
-// Get the user's input (example)
-let userInput = "Playing the piano";
-
-// Loop through the possibleAnswers array and check if the user's input matches any of the answers (case-insensitive)
-let isAnswerCorrect = false;
-for (let i = 0; i < possibleAnswers.length; i++) {
-  for (let j = 0; j < possibleAnswers[i].length; j++) {
-    if (userInput.toLowerCase() === possibleAnswers[i][j].toLowerCase()) {
-      isAnswerCorrect = true;
-      break;
-    }
-  }
-  if (isAnswerCorrect) {
-    break;
-  }
-}
-
-if (isAnswerCorrect) {
-  console.log("Correct answer!");
-} else {
-  console.log("Wrong answer!");
-}
-
-
 /*-------------- Read Data - Game On (Dave & Malorie w/Help) --------------*/
 
 async function readGameOn() {
